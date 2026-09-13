@@ -1,302 +1,158 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sagar Chhatrala | Security Portfolio</title>
-  <meta name="description" content="Sagar Chhatrala portfolio across cloud security, data security, identity, AI system security, public talks, CIS benchmarks, and open-source security tooling.">
-  <meta property="og:title" content="Sagar Chhatrala | Security Portfolio">
-  <meta property="og:description" content="Cloud, data, identity, and AI security portfolio with public talks, benchmarks, and open-source work.">
-  <meta property="og:type" content="profile">
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/20254196?v=4">
-  <link rel="stylesheet" href="./styles.css">
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Sagar Chhatrala",
-      "jobTitle": "Staff Security Engineer",
-      "image": "https://avatars.githubusercontent.com/u/20254196?v=4",
-      "description": "Staff Security Engineer focused on cloud security, data security, identity, AI system security, security automation, and public security research.",
-      "sameAs": [
-        "https://www.linkedin.com/in/sagarchhatrala",
-        "https://github.com/sagarchhatrala",
-        "https://medium.com/@sagarchhatrala",
-        "https://pypi.org/project/agent-circuit-breaker/",
-        "https://github.com/sagarchhatrala/Talks/blob/master/null_bangalore/Introduction%20to%20shodan.pptx"
-      ],
-      "knowsAbout": [
-        "AWS Security",
-        "Azure Security",
-        "GCP Security",
-        "Kubernetes Security",
-        "Databricks Security",
-        "Identity and Access",
-        "OIDC",
-        "OAuth 2.0",
-        "PKI",
-        "WAF",
-        "Infrastructure as Code Security",
-        "AI System Security",
-        "MCP Security",
-        "A2A",
-        "Agent Guardrails",
-        "Security Automation",
-        "MITRE ATT&CK",
-        "Incident Response",
-        "Cloud Threat Research",
-        "CIS Benchmarks"
-      ]
-    }
-  </script>
-</head>
-<body>
-  <header class="header">
-    <a class="brand" href="#top">Sagar Chhatrala</a>
-    <nav aria-label="Portfolio navigation">
-      <a href="#story">Story</a>
-      <a href="#domains">Domains</a>
-      <a href="#systems">Systems</a>
-      <a href="#stage">Stage</a>
-      <a href="#library">Library</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sagar Chhatrala | Cloud, Data, Identity, and AI Security</title>
+    <meta name="description" content="Sagar Chhatrala is a Staff Security Engineer building cloud, data, identity, and AI security systems, including Agent Circuit Breaker for AI agent runtime safety.">
+    <meta name="keywords" content="Sagar Chhatrala, cloud security, AI security, MCP security, agent security, data security, identity security, AWS security, Kubernetes security, Agent Circuit Breaker">
+    <meta name="author" content="Sagar Chhatrala">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sagarchhatrala.github.io/">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Sagar Chhatrala | Security Portfolio">
+    <meta property="og:description" content="Cloud, data, identity, and AI security portfolio with public talks, standards work, and Agent Circuit Breaker.">
+    <meta property="og:url" content="https://sagarchhatrala.github.io/">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/20254196?v=4">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Sagar Chhatrala | Security Portfolio">
+    <meta name="twitter:description" content="Security engineer focused on cloud, data, identity, AI systems, and open-source agent safety.">
+    <link rel="stylesheet" href="./styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sagar Chhatrala",
+        "jobTitle": "Staff Security Engineer",
+        "url": "https://sagarchhatrala.github.io/",
+        "image": "https://avatars.githubusercontent.com/u/20254196?v=4",
+        "description": "Staff Security Engineer focused on cloud security, data security, identity, AI system security, security automation, and public security research.",
+        "sameAs": [
+          "https://www.linkedin.com/in/sagarchhatrala",
+          "https://github.com/sagarchhatrala",
+          "https://medium.com/@sagarchhatrala",
+          "https://sagarchhatrala.github.io/agent-circuit-breaker/",
+          "https://github.com/sagarchhatrala/agent-circuit-breaker",
+          "https://pypi.org/project/agent-circuit-breaker/"
+        ],
+        "knowsAbout": [
+          "AWS Security",
+          "Azure Security",
+          "GCP Security",
+          "Kubernetes Security",
+          "Databricks Security",
+          "Identity and Access",
+          "AI System Security",
+          "MCP Security",
+          "Agent Guardrails",
+          "Security Automation",
+          "MITRE ATT&CK",
+          "Incident Response",
+          "CIS Benchmarks"
+        ],
+        "makesOffer": {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "SoftwareSourceCode",
+            "name": "Agent Circuit Breaker",
+            "url": "https://sagarchhatrala.github.io/agent-circuit-breaker/",
+            "codeRepository": "https://github.com/sagarchhatrala/agent-circuit-breaker",
+            "applicationCategory": "SecurityApplication"
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Staff Security Engineer</p>
-        <h1>Cloud, data, identity, and AI security.</h1>
-        <p class="lead">
-          I build security programs that move from architecture into daily operation:
-          cloud guardrails, data access controls, agent boundaries, identity patterns,
-          CI/CD checks, product security research, and incident automation.
-        </p>
-        <div class="actions">
-          <a class="primary" href="#story">Read Portfolio</a>
-          <a href="https://pypi.org/project/agent-circuit-breaker/">Agent Circuit Breaker</a>
-          <a href="https://www.linkedin.com/in/sagarchhatrala">LinkedIn</a>
-        </div>
-      </div>
-
-      <aside class="hero-panel" aria-label="Security operating areas">
-        <p class="panel-kicker">Operating Areas</p>
-        <div class="focus-list">
-          <article>
-            <span>01</span>
-            <strong>Cloud and Platform</strong>
-            <p>AWS, Azure, GCP, Kubernetes, IAM, Terraform, CI/CD, CNAPP and CSPM.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <strong>Data and AI Workflows</strong>
-            <p>Databricks-connected accounts, Snowflake, model-heavy data teams, secrets and auditability.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <strong>Identity and Access</strong>
-            <p>SSO, OIDC, OAuth 2.0, PKI, Okta, least privilege and secure workforce access.</p>
-          </article>
-          <article>
-            <span>04</span>
-            <strong>AI/MCP Security</strong>
-            <p>Agent boundaries, Bedrock, A2A, tool permissions, design-partner work and automation safety.</p>
-          </article>
-          <article>
-            <span>05</span>
-            <strong>Detection and Product</strong>
-            <p>MITRE ATT&CK detections, IaC plugins, Tenable Cloud Security and CIS AWS/Azure standards.</p>
-          </article>
-        </div>
-      </aside>
-    </section>
-
-    <section class="story" id="story">
-      <div class="section-head">
-        <p class="eyebrow">Career Arc</p>
-        <h2>From systems scale to security leadership.</h2>
-      </div>
-      <div class="arc">
-        <article>
-          <span>01</span>
-          <h3>Foundation</h3>
-          <p>BE Information Technology from GTU, with AI exchange study at IIT Gandhinagar.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>Scale</h3>
-          <p>Intel systems work around HPC and high-compute environments shaped my view of infrastructure risk.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Product Security</h3>
-          <p>Cisco security work expanded into appsec, defense in depth, DNS security, and engineering enablement.</p>
-        </article>
-        <article>
-          <span>04</span>
-          <h3>Research</h3>
-          <p>Tenable and CIS work connected cloud controls to public benchmarks and repeatable standards.</p>
-        </article>
-        <article>
-          <span>05</span>
-          <h3>Ownership</h3>
-          <p>At Greenlight, I work across cloud, data, identity, AI systems, automation, and security operations.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="domains" id="domains">
-      <div class="section-head">
-        <p class="eyebrow">Security Range</p>
-        <h2>Security domains behind the operating model.</h2>
-      </div>
-      <div class="domain-board">
-        <article>
-          <span>Cloud Security</span>
-          <strong>AWS, Azure, GCP, CNAPP, CSPM, account guardrails, cloud threat research</strong>
-        </article>
-        <article>
-          <span>AI and MCP Security</span>
-          <strong>Design-partner work, agent boundaries, A2A, Bedrock, tool permissions</strong>
-        </article>
-        <article>
-          <span>Data Security</span>
-          <strong>Databricks-connected workflows, Snowflake, data access, protection, auditability</strong>
-        </article>
-        <article>
-          <span>Identity</span>
-          <strong>SSO, OIDC, OAuth 2.0, PKI, Okta, least privilege, workforce access</strong>
-        </article>
-        <article>
-          <span>Kubernetes and AppSec</span>
-          <strong>Threat modeling, microservices, WAF, Checkmarx, Rapid7, developer workflows</strong>
-        </article>
-        <article>
-          <span>DevSecOps and IaC</span>
-          <strong>Terraform, IaC plugins, CI/CD checks, policy validation before deployment</strong>
-        </article>
-        <article>
-          <span>Detection and IR</span>
-          <strong>MITRE ATT&CK detections, incident response, forensics, vulnerability remediation</strong>
-        </article>
-        <article>
-          <span>Product and Standards</span>
-          <strong>Tenable Cloud Security, CIS AWS/Azure benchmarks, startup advisory perspective</strong>
-        </article>
-      </div>
-    </section>
-
-    <section class="systems" id="systems">
-      <div class="section-head">
-        <p class="eyebrow">Operating Surface</p>
-        <h2>Controls that make security operational.</h2>
-      </div>
-      <div class="control-stack">
-        <article class="control-item">
-          <div class="control-index">01</div>
-          <div class="control-body">
-            <span>Cloud Control Plane</span>
-            <h3>AWS, Kubernetes, IAM, Terraform, CI/CD</h3>
-            <p>Guardrails for multi-account cloud environments, workload identity, access boundaries, network controls, logging, vulnerability workflows, and deployment checks.</p>
-            <div class="chips"><b>IAM</b><b>Kubernetes</b><b>Policy checks</b></div>
-          </div>
-        </article>
-        <article class="control-item">
-          <div class="control-index">02</div>
-          <div class="control-body">
-            <span>Data and AI Workflows</span>
-            <h3>Databricks-connected accounts and model-heavy data teams</h3>
-            <p>Security of cloud accounts that support internal data teams using AI models, including secrets, data access, data protection, and audit visibility.</p>
-            <div class="chips"><b>Databricks</b><b>Secrets</b><b>Data access</b></div>
-          </div>
-        </article>
-        <article class="control-item feature-control">
-          <div class="control-index">03</div>
-          <div class="control-body">
-            <span>In-House AI SOC Security</span>
-            <h3>Bedrock agents with scoped enterprise tools</h3>
-            <p>Security support for Greenlight's multi-tier AI SOC system built on AWS Bedrock and Terraform, with supervisor and specialized agents for Okta, Jira, Confluence, Slack, GitHub, Tines, Snowflake, and Datadog.</p>
-            <div class="chips"><b>Bedrock</b><b>Lambda tools</b><b>Approval paths</b></div>
-          </div>
-        </article>
-        <article class="control-item">
-          <div class="control-index">04</div>
-          <div class="control-body">
-            <span>Security Automation</span>
-            <h3>Python, Lambda tools, approvals, logs, and response routing</h3>
-            <p>Automation designed with scoped permissions, approval paths, audit logging, and handling for untrusted context from collaboration and engineering systems.</p>
-            <div class="chips"><b>Python</b><b>Audit logs</b><b>IR routing</b></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="stage" id="stage">
-      <div class="section-head">
-        <p class="eyebrow">Talks and Research</p>
-        <h2>Public work that shows the operating model behind the resume.</h2>
-      </div>
-      <div class="stage-grid">
-        <a href="https://www.crowdstrike.com/en-us/events/fal-con/">
-          <small>Fal.Con 2025</small>
-          <strong>Cloud data security for practitioners</strong>
-          <span>Real-world use case with Falcon Data Protection.</span>
+    <header class="site-header">
+      <nav class="nav shell" aria-label="Portfolio navigation">
+        <a class="brand" href="#top" aria-label="Sagar Chhatrala home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" focusable="false"><path d="M16 3.5 6.5 7.7v7.8c0 6.1 3.8 10.8 9.5 13 5.7-2.2 9.5-6.9 9.5-13V7.7L16 3.5Z"></path><path d="m12.1 16.3 2.5 2.5 5.4-6.1"></path></svg>
+          </span>
+          <span>Sagar Chhatrala</span>
         </a>
-        <a href="https://github.com/sagarchhatrala/Talks/blob/master/null_bangalore/Introduction%20to%20shodan.pptx">
-          <small>null Bangalore</small>
-          <strong>Introduction to Shodan</strong>
-          <span>Internet-exposed asset discovery and reconnaissance fundamentals.</span>
-        </a>
-        <article>
-          <small>Fal.Con 2026 - Upcoming, Las Vegas</small>
-          <strong>Rethinking cloud security through a data-first lens</strong>
-          <span>Cloud security centered on sensitive data, access paths, and operational impact.</span>
-        </article>
-        <article>
-          <small>2026</small>
-          <strong>Securing AI and mobile access without slowing anyone down</strong>
-          <span>Workforce access patterns for AI and mobile-heavy environments.</span>
-        </article>
-        <article>
-          <small>Cisco</small>
-          <strong>Defense in depth</strong>
-          <span>Layered controls and practical enterprise defense.</span>
-        </article>
-        <article>
-          <small>Cisco</small>
-          <strong>DoH: DNS over HTTPS</strong>
-          <span>Encrypted DNS visibility, privacy, and defender tradeoffs.</span>
-        </article>
-      </div>
-    </section>
+        <div class="nav-links">
+          <a href="#work">Work</a>
+          <a href="#projects">Projects</a>
+          <a href="#systems">Systems</a>
+          <a href="#proof">Proof</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="nav-cta" href="https://sagarchhatrala.github.io/agent-circuit-breaker/"><span>Agent Circuit Breaker</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </nav>
+    </header>
 
-    <section class="library" id="library">
-      <div class="section-head">
-        <p class="eyebrow">Library</p>
-        <h2>Selected public record.</h2>
-      </div>
-      <div class="library-links">
-        <a href="https://pypi.org/project/agent-circuit-breaker/" data-evidence="open-source ai-agent-safety"><span>Code</span><strong>Agent Circuit Breaker</strong><em>Open-source AI agent safety project.</em></a>
-        <a href="https://github.com/sagarchhatrala" data-evidence="github code talks"><span>Profile</span><strong>GitHub</strong><em>Code, talks, experiments, and public security work.</em></a>
-        <a href="https://www.cisecurity.org/benchmark/amazon_web_services" data-evidence="cis aws benchmark"><span>Standard</span><strong>CIS AWS Benchmark</strong><em>Co-author signal for cloud security standards.</em></a>
-        <a href="https://www.cisecurity.org/benchmark/azure" data-evidence="cis azure benchmark"><span>Standard</span><strong>CIS Azure Benchmark</strong><em>Co-author signal for Azure foundations controls.</em></a>
-        <a href="https://github.com/sagarchhatrala/Talks/blob/master/null_bangalore/Introduction%20to%20shodan.pptx" data-evidence="shodan null-bangalore talk"><span>Talk</span><strong>Introduction to Shodan</strong><em>Internet-exposed asset discovery and reconnaissance.</em></a>
-        <a href="https://medium.com/@sagarchhatrala" data-evidence="security writing"><span>Writing</span><strong>Medium</strong><em>Security writing and threat modeling notes.</em></a>
-      </div>
-    </section>
+    <main id="main">
+      <section id="top" class="hero section">
+        <div class="grid-surface" aria-hidden="true"></div>
+        <div class="shell hero-shell">
+          <div class="hero-copy">
+            <a class="announcement" href="#projects"><span>Building now</span>Explore Agent Circuit Breaker.</a>
+            <h1>Security engineering<br>for systems that<br>actually move.</h1>
+            <p class="hero-lede">I work where cloud platforms, sensitive data, identity, automation, and AI agents overlap. My focus is turning abstract risk into practical controls that engineers can run every day.</p>
+            <div class="hero-actions" aria-label="Primary actions">
+              <a class="button button-primary" href="#projects"><span>View projects</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+              <a class="button button-secondary" href="https://www.linkedin.com/in/sagarchhatrala"><span>Connect on LinkedIn</span></a>
+            </div>
+          </div>
 
-    <section class="contact" id="contact">
-      <div>
-        <p class="eyebrow">Contact</p>
-        <h2>Cloud, data, identity, and AI security systems.</h2>
-      </div>
-      <div class="contact-links">
-        <a href="mailto:chhatralasagar99@gmail.com">chhatralasagar99@gmail.com</a>
-        <a href="https://www.linkedin.com/in/sagarchhatrala">LinkedIn</a>
-        <a href="https://github.com/sagarchhatrala">GitHub</a>
-      </div>
-    </section>
-  </main>
-</body>
+          <aside class="hero-product" aria-label="Security operating model">
+            <div class="review-window">
+              <div class="window-top"><div><strong>Security operating model</strong><span>cloud, data, identity, AI</span></div><span class="live-pill">Active</span></div>
+              <div class="action-summary"><span class="source-pill">Staff Security Engineer</span><h2>Build controls<br>that survive real workflows.</h2><code>risk -> policy -> automation -> evidence</code></div>
+              <div class="signal-grid">
+                <div><span>Cloud</span><strong>AWS / Azure / GCP</strong></div>
+                <div><span>Data</span><strong>Databricks / Snowflake</strong></div>
+                <div><span>AI</span><strong>Agents / MCP / Bedrock</strong></div>
+              </div>
+              <div class="decision-strip"><span>Current project</span><strong>ACB</strong></div>
+              <ul class="audit-list" aria-label="Work signals">
+                <li><span></span>cloud guardrails and account boundaries</li>
+                <li><span></span>identity patterns for workforce and systems</li>
+                <li><span></span>AI agent runtime controls and audit trails</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="shell proof-row" aria-label="Security focus"><div><span>Mode</span><strong>Builder</strong></div><div><span>Depth</span><strong>Cloud + AI</strong></div><div><span>Signal</span><strong>Public work</strong></div></div>
+      </section>
+
+      <section id="work" class="section split-section">
+        <div class="shell split-grid">
+          <div class="section-copy"><p class="eyebrow">Work</p><h2>I connect architecture, product risk, and operational security.</h2><p>The work spans cloud foundations, data access, identity boundaries, Kubernetes, appsec, detection, and AI agent safety. The common thread is making controls understandable enough for engineers and reliable enough for production.</p></div>
+          <div class="pipeline" aria-label="Career arc"><article><span>01</span><h3>Scale</h3><p>HPC and infrastructure work at Intel shaped my view of systems-level risk.</p></article><article><span>02</span><h3>Product Security</h3><p>Cisco and Tenable expanded the work into appsec, cloud controls, and standards.</p></article><article><span>03</span><h3>Ownership</h3><p>At Greenlight, I operate across cloud, data, identity, AI systems, and automation.</p></article></div>
+        </div>
+      </section>
+
+      <section id="projects" class="section project-section">
+        <div class="shell">
+          <div class="section-heading compact"><p class="eyebrow">Projects</p><h2>The project people should not have to discover by guessing the URL.</h2><p>Agent Circuit Breaker is now a first-class project on this site, with a direct path to the project website, source, package, and docs.</p></div>
+          <div class="featured-project">
+            <article class="project-hero-card"><span class="source-pill">Open source project</span><h3>Agent Circuit Breaker</h3><p>A deterministic runtime safety layer for AI agents. It checks proposed shell commands, SQL, filesystem operations, package installs, network calls, MCP tools, and agent trajectories before they execute.</p><div class="hero-actions"><a class="button button-primary" href="https://sagarchhatrala.github.io/agent-circuit-breaker/"><span>Open project site</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="button button-secondary" href="https://github.com/sagarchhatrala/agent-circuit-breaker"><span>GitHub repo</span></a></div></article>
+            <div class="project-grid"><a class="project-link primary-link" href="https://sagarchhatrala.github.io/agent-circuit-breaker/"><span>Project site</span><strong>Runtime safety for AI agents</strong><small>The public project page visitors can explore.</small></a><a class="project-link" href="https://pypi.org/project/agent-circuit-breaker/"><span>Package</span><strong>PyPI install</strong><small>Installable Python package.</small></a><a class="project-link" href="https://github.com/sagarchhatrala/agent-circuit-breaker/blob/main/docs/GETTING_STARTED.md"><span>Docs</span><strong>Getting started</strong><small>Local usage and integration path.</small></a></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="systems" class="section controls-section">
+        <div class="shell"><div class="section-heading"><p class="eyebrow">Systems</p><h2>Security domains behind the operating model.</h2></div><div class="control-grid"><article><span class="control-icon">CLD</span><h3>Cloud Security</h3><p>AWS, Azure, GCP, Kubernetes, IAM, Terraform, CNAPP, CSPM, and account guardrails.</p></article><article><span class="control-icon">DAT</span><h3>Data Security</h3><p>Databricks-connected workflows, Snowflake, sensitive data access, and auditability.</p></article><article><span class="control-icon">ID</span><h3>Identity</h3><p>SSO, OIDC, OAuth 2.0, PKI, Okta, least privilege, and workforce access.</p></article><article><span class="control-icon">AI</span><h3>AI and MCP Security</h3><p>Agent boundaries, A2A, Bedrock, scoped tools, approvals, and runtime safety.</p></article><article><span class="control-icon">APP</span><h3>AppSec and DevSecOps</h3><p>Threat modeling, WAF, Checkmarx, Rapid7, CI/CD checks, and policy validation.</p></article><article><span class="control-icon">IR</span><h3>Detection and IR</h3><p>MITRE ATT&CK detections, vulnerability response, cloud investigations, and automation.</p></article></div></div>
+      </section>
+
+      <section id="proof" class="section visual-section">
+        <div class="shell visual-grid">
+          <div class="evidence-panel"><div class="evidence-row"><span>CIS standards</span><strong>AWS and Azure benchmark contribution signal</strong></div><div class="evidence-row"><span>Public speaking</span><strong>Fal.Con, null Bangalore, Cisco security talks</strong></div><div class="evidence-row"><span>Open source</span><strong>Agent Circuit Breaker for AI agent runtime safety</strong></div></div>
+          <div class="section-copy"><p class="eyebrow">Proof</p><h2>Different from a normal security portfolio because the work is concrete.</h2><p>This page is designed to route a human quickly: what I work on, why it matters, where the public proof is, and what I am building now.</p><div class="mini-ledger" aria-label="Public record links"><div><span>Project</span><strong><a href="https://sagarchhatrala.github.io/agent-circuit-breaker/">Agent Circuit Breaker</a></strong></div><div><span>Code</span><strong><a href="https://github.com/sagarchhatrala">GitHub profile</a></strong></div><div><span>Writing</span><strong><a href="https://medium.com/@sagarchhatrala">Medium security notes</a></strong></div></div></div>
+        </div>
+      </section>
+
+      <section id="contact" class="section try-section">
+        <div class="shell try-grid"><div class="section-copy"><p class="eyebrow">Contact</p><h2>Cloud, data, identity, and AI security systems.</h2><p>The fastest path is LinkedIn or email. If you are here for the project, start with Agent Circuit Breaker.</p></div><div class="contact-card"><a class="button button-primary" href="mailto:chhatralasagar99@gmail.com">Email me</a><a class="button button-secondary" href="https://www.linkedin.com/in/sagarchhatrala">LinkedIn</a><a class="button button-secondary" href="https://sagarchhatrala.github.io/agent-circuit-breaker/">Agent Circuit Breaker</a></div></div>
+      </section>
+    </main>
+
+    <footer class="footer"><div class="shell footer-inner"><a class="footer-brand" href="#top">Sagar Chhatrala</a><div><a href="#projects">Projects</a><a href="https://github.com/sagarchhatrala">GitHub</a><a href="https://www.linkedin.com/in/sagarchhatrala">LinkedIn</a></div></div></footer>
+  </body>
 </html>
