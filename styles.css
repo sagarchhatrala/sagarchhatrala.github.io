@@ -137,35 +137,70 @@ h1, h2, .hero-lede { overflow-wrap: anywhere; }
 
 @media (max-width: 940px) {
   .site-header { top: 8px; }
-  .shell { width: min(calc(100vw - 32px), 358px) !important; }
-  .nav { grid-template-columns: 1fr; padding: 12px; }
-  .nav-links { justify-self: stretch; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-  .nav-links a { background: var(--mist); text-align: center; }
-  .nav-cta { justify-self: stretch; }
+  .shell { width: min(1120px, calc(100% - 32px)); }
+  .nav { grid-template-columns: 1fr; gap: 10px; min-height: 0; padding: 12px; }
+  .nav-links {
+    justify-self: stretch;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a {
+    flex: 0 0 auto;
+    background: var(--mist);
+    padding: 8px 11px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .nav-cta { justify-self: stretch; width: 100%; }
   .hero { min-height: auto; padding-top: 92px; }
   .hero-shell, .split-grid, .visual-grid, .try-grid { grid-template-columns: 1fr; gap: 42px; }
-  .hero-copy, .hero-product, .announcement, h1, .review-window { width: min(calc(100vw - 32px), 358px); max-width: min(calc(100vw - 32px), 358px); }
-  .hero-lede { width: min(calc(100vw - 48px), 342px); max-width: min(calc(100vw - 48px), 342px); }
+  .hero-copy, .hero-product, .announcement, h1, .hero-lede, .review-window { width: 100%; max-width: 100%; }
   h1 { font-size: 42px; line-height: 1.03; }
   h2 { font-size: 32px; }
   .control-grid, .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 620px) {
-  .shell { width: calc(100vw - 32px) !important; }
+  .site-header { position: relative; top: 0; padding: 10px 0 0; }
+  body, main, .site-header, .section { max-width: 100%; overflow-x: hidden; }
+  .shell { width: calc(100vw - 32px); max-width: calc(100vw - 32px); }
   .section { padding: 72px 0; }
+  .nav { overflow: hidden; border-radius: 14px; }
   .nav, .hero, .hero-shell, .review-window, .project-hero-card { max-width: 100%; }
-  .hero-copy, .hero-product, .announcement, h1, .hero-lede, .review-window { width: calc(100vw - 32px); max-width: calc(100vw - 32px); }
-  h1 { max-width: 100%; font-size: 34px; line-height: 1.06; }
-  h2 { max-width: 100%; font-size: 30px; }
+  .hero { padding-top: 56px; }
+  .hero-copy, .hero-product, .announcement, h1, .hero-lede, .review-window { width: 100%; max-width: 100%; }
+  h1 { max-width: 100%; font-size: clamp(29px, 8vw, 32px); line-height: 1.1; }
+  h2 { max-width: 100%; font-size: clamp(28px, 8vw, 34px); line-height: 1.08; }
   h1, h2, h3, p, a { overflow-wrap: anywhere; }
   .hero-lede, .section-copy p, .section-heading p { font-size: 16px; }
-  .brand span:last-child { max-width: 210px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .brand span:last-child { max-width: calc(100vw - 112px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .announcement { align-items: flex-start; flex-wrap: wrap; border-radius: 14px; line-height: 1.35; overflow-wrap: anywhere; }
   .hero-shell { gap: 34px; }
   .nav-links, .hero-actions, .proof-row, .signal-grid, .control-grid, .project-grid { grid-template-columns: 1fr; }
+  .nav-links {
+    display: grid;
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+  }
+  .nav-links a {
+    min-width: 0;
+    padding-right: 8px;
+    padding-left: 8px;
+    white-space: normal;
+  }
+  .nav-links a:last-child { grid-column: 1 / -1; }
   .hero-actions { display: grid; }
-  .button { width: 100%; }
+  .nav-cta, .button { width: 100%; max-width: 100%; }
+  .project-hero-card { padding: 22px; }
+  .project-hero-card h3 { font-size: clamp(30px, 9vw, 38px); }
+  .project-link, .control-grid article, .pipeline article, .evidence-row, .contact-card { padding: 18px; }
   .action-summary, .signal-grid, .decision-strip, .audit-list { margin-right: 14px; margin-left: 14px; }
   .window-top { align-items: flex-start; }
   .proof-row { display: grid; gap: 16px; text-align: left; }
