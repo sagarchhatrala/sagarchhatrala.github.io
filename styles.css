@@ -207,3 +207,379 @@ h1, h2, .hero-lede { overflow-wrap: anywhere; }
   .pipeline article, .mini-ledger div { grid-template-columns: 1fr; }
   .footer-inner { align-items: flex-start; flex-direction: column; }
 }
+
+/* Local redesign: YC-style project-first portfolio */
+:root {
+  --canvas: #fdf7ef;
+  --paper: #ffffff;
+  --ink: #111111;
+  --ink-soft: #5f5b55;
+  --ink-faint: #8a8379;
+  --line: #ded6ca;
+  --line-strong: #c9bcae;
+  --mist: #fff2e4;
+  --mint: #d9f3e9;
+  --teal: #12715b;
+  --blue: #1f5eff;
+  --yc: #ff6600;
+  --danger: #cc3145;
+  --shadow-soft: 0 18px 42px rgba(17, 17, 17, 0.1);
+  --shadow-tight: 0 10px 24px rgba(17, 17, 17, 0.08);
+}
+
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a:hover { color: #c94f00; }
+
+.site-header {
+  top: 0;
+  border-bottom: 1px solid var(--line);
+  background: rgba(253, 247, 239, 0.94);
+}
+
+.nav {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.brand-mark {
+  border-radius: 0;
+  background: var(--yc);
+  color: var(--paper);
+  box-shadow: none;
+}
+
+.nav-links a,
+.nav-cta,
+.button,
+.announcement,
+.project-link,
+.pipeline article,
+.control-grid article,
+.contact-card,
+.evidence-row,
+.mini-ledger div,
+.review-window,
+.source-pill,
+.live-pill,
+.action-summary code,
+.signal-grid,
+.decision-strip {
+  border-radius: 2px;
+}
+
+.nav-cta,
+.button-primary {
+  background: var(--yc);
+  color: var(--paper);
+  box-shadow: 0 10px 24px rgba(255, 102, 0, 0.22);
+}
+
+.nav-cta:hover,
+.button-primary:hover {
+  background: #111111;
+  color: var(--paper);
+}
+
+.button-secondary {
+  border-color: var(--line-strong);
+  background: var(--paper);
+}
+
+.nav-cta svg,
+.github-icon svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.hero {
+  min-height: 680px;
+  padding-top: 96px;
+}
+
+.grid-surface {
+  background: linear-gradient(180deg, #fdf7ef 0%, #fffaf4 58%, #fdf7ef 100%);
+  mask-image: none;
+}
+
+h1 {
+  max-width: 850px;
+  font-size: clamp(48px, 7vw, 86px);
+}
+
+.announcement span,
+.source-pill {
+  background: var(--yc);
+  color: var(--paper);
+}
+
+.live-pill {
+  color: #12715b;
+}
+
+.signal-grid strong {
+  white-space: normal;
+}
+
+.decision-strip {
+  border-color: rgba(255, 102, 0, 0.34);
+  background: #fff7ef;
+}
+
+.decision-strip strong,
+.pipeline span,
+.eyebrow {
+  color: #c94f00;
+}
+
+.project-section {
+  background: var(--paper);
+}
+
+.two-projects {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.two-projects .project-link {
+  display: grid;
+  min-height: auto;
+  align-content: start;
+  justify-content: initial;
+  border-color: var(--line-strong);
+  border-top: 5px solid var(--yc);
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(17, 17, 17, 0.06);
+}
+
+.two-projects .project-card-hac {
+  border-top-color: var(--teal);
+}
+
+.project-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.project-card-top span {
+  color: #c94f00;
+}
+
+.github-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  background: #fffaf4;
+  color: var(--ink);
+}
+
+.github-icon:hover {
+  border-color: var(--yc);
+  background: var(--ink);
+  color: var(--paper);
+  transform: translateY(-1px);
+}
+
+.github-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.two-projects .project-link strong {
+  margin: 0 0 14px;
+  font-size: clamp(30px, 4vw, 46px);
+}
+
+.two-projects .project-link small {
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.project-points {
+  display: grid;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 0;
+  color: var(--ink-soft);
+  list-style: none;
+}
+
+.project-points li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.project-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 8px;
+  height: 8px;
+  background: var(--yc);
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.compare-section {
+  background: #fffaf4;
+  border-bottom: 1px solid var(--line);
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.comparison-table {
+  display: grid;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1.05fr 0.45fr 1fr;
+  border-bottom: 1px solid var(--line);
+}
+
+.table-row:last-child {
+  border-bottom: 0;
+}
+
+.table-row span,
+.table-row strong {
+  min-width: 0;
+  padding: 16px;
+}
+
+.table-head {
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.table-row strong {
+  color: #c94f00;
+  font-size: 18px;
+}
+
+.visual-section {
+  background: #111111;
+}
+
+.visual-section .eyebrow,
+.evidence-row span {
+  color: #ffb380;
+}
+
+.evidence-row,
+.mini-ledger div {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+@media (max-width: 940px) {
+  .site-header {
+    top: 0;
+  }
+
+  .nav {
+    grid-template-columns: 1fr;
+  }
+
+  .compare-grid,
+  .two-projects {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    padding-top: 56px;
+  }
+
+  .two-projects .project-link {
+    padding: 20px;
+  }
+
+  .project-actions {
+    display: grid;
+  }
+
+  .table-row {
+    grid-template-columns: 1fr;
+  }
+
+  .table-head {
+    display: none;
+  }
+
+  .table-row span,
+  .table-row strong {
+    padding: 12px 14px;
+  }
+
+  .nav-links a:last-child {
+    grid-column: auto;
+  }
+}
+
+/* Work section balance */
+.split-section .split-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.94fr);
+  gap: 44px;
+  align-items: start;
+}
+
+.split-section .pipeline {
+  width: min(100%, 520px);
+  justify-self: start;
+}
+
+.split-section .pipeline article {
+  grid-template-columns: 42px 1fr;
+  gap: 3px 14px;
+  padding: 16px 18px;
+}
+
+.split-section .pipeline h3 {
+  margin-bottom: 4px;
+  font-size: 17px;
+}
+
+.split-section .pipeline p {
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+@media (max-width: 940px) {
+  .split-section .split-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .split-section .pipeline {
+    width: 100%;
+  }
+}

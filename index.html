@@ -3,20 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sagar Chhatrala | Cloud, Data, Identity, and AI Security</title>
-    <meta name="description" content="Sagar Chhatrala is a Staff Security Engineer building cloud, data, identity, and AI security systems, including Agent Circuit Breaker for AI agent runtime safety.">
-    <meta name="keywords" content="Sagar Chhatrala, cloud security, AI security, MCP security, agent security, data security, identity security, AWS security, Kubernetes security, Agent Circuit Breaker">
+    <title>Sagar Chhatrala | AI Agent Security Projects</title>
+    <meta name="description" content="Sagar Chhatrala builds practical AI agent security projects: Agent Circuit Breaker for runtime action control and Horizon Agent Containment for long-horizon capability containment.">
+    <meta name="keywords" content="Sagar Chhatrala, AI security, agent security, MCP security, Agent Circuit Breaker, Horizon Agent Containment, cloud security, identity security">
     <meta name="author" content="Sagar Chhatrala">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://sagarchhatrala.github.io/">
     <meta property="og:type" content="profile">
-    <meta property="og:title" content="Sagar Chhatrala | Security Portfolio">
-    <meta property="og:description" content="Cloud, data, identity, and AI security portfolio with public talks, standards work, and Agent Circuit Breaker.">
+    <meta property="og:title" content="Sagar Chhatrala | AI Agent Security Projects">
+    <meta property="og:description" content="Two practical projects for AI agent safety: pre-execution action control and long-horizon capability containment.">
     <meta property="og:url" content="https://sagarchhatrala.github.io/">
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/20254196?v=4">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Sagar Chhatrala | Security Portfolio">
-    <meta name="twitter:description" content="Security engineer focused on cloud, data, identity, AI systems, and open-source agent safety.">
+    <meta name="twitter:title" content="Sagar Chhatrala | AI Agent Security Projects">
+    <meta name="twitter:description" content="Agent Circuit Breaker and Horizon Agent Containment: deterministic security controls for tool-using AI agents.">
     <link rel="stylesheet" href="./styles.css">
     <script type="application/ld+json">
       {
@@ -33,6 +33,7 @@
           "https://medium.com/@sagarchhatrala",
           "https://sagarchhatrala.github.io/agent-circuit-breaker/",
           "https://github.com/sagarchhatrala/agent-circuit-breaker",
+          "https://github.com/sagarchhatrala/horizon-agent-containment",
           "https://pypi.org/project/agent-circuit-breaker/"
         ],
         "knowsAbout": [
@@ -50,16 +51,28 @@
           "Incident Response",
           "CIS Benchmarks"
         ],
-        "makesOffer": {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "SoftwareSourceCode",
-            "name": "Agent Circuit Breaker",
-            "url": "https://sagarchhatrala.github.io/agent-circuit-breaker/",
-            "codeRepository": "https://github.com/sagarchhatrala/agent-circuit-breaker",
-            "applicationCategory": "SecurityApplication"
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "SoftwareSourceCode",
+              "name": "Agent Circuit Breaker",
+              "url": "https://sagarchhatrala.github.io/agent-circuit-breaker/",
+              "codeRepository": "https://github.com/sagarchhatrala/agent-circuit-breaker",
+              "applicationCategory": "SecurityApplication"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "SoftwareSourceCode",
+              "name": "Horizon Agent Containment",
+              "url": "https://sagarchhatrala.github.io/horizon-agent-containment/presentation/",
+              "codeRepository": "https://github.com/sagarchhatrala/horizon-agent-containment",
+              "applicationCategory": "SecurityApplication"
+            }
           }
-        }
+        ]
       }
     </script>
   </head>
@@ -75,13 +88,13 @@
           <span>Sagar Chhatrala</span>
         </a>
         <div class="nav-links">
-          <a href="#work">Work</a>
           <a href="#projects">Projects</a>
-          <a href="#systems">Systems</a>
+          <a href="#compare">Compare</a>
+          <a href="#systems">Expertise</a>
           <a href="#proof">Proof</a>
           <a href="#contact">Contact</a>
         </div>
-        <a class="nav-cta" href="https://sagarchhatrala.github.io/agent-circuit-breaker/"><span>Agent Circuit Breaker</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        <a class="nav-cta" href="https://github.com/sagarchhatrala" aria-label="Open Sagar Chhatrala on GitHub"><span>GitHub</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.82c.56.1.76-.24.76-.54v-2.02c-3.1.68-3.75-1.32-3.75-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.02-.7.08-.68.08-.68 1.12.08 1.72 1.16 1.72 1.16 1 .1 2.62.72 3.22-.54.1-.72.4-1.2.72-1.48-2.48-.28-5.08-1.24-5.08-5.52 0-1.22.44-2.22 1.14-3-.12-.28-.5-1.42.1-2.96 0 0 .94-.3 3.08 1.14.9-.26 1.84-.38 2.78-.38.94 0 1.9.12 2.78.38 2.14-1.44 3.08-1.14 3.08-1.14.6 1.54.22 2.68.1 2.96.72.78 1.14 1.78 1.14 3 0 4.3-2.6 5.24-5.1 5.52.42.36.78 1.06.78 2.14v3.18c0 .3.2.64.78.54A11.2 11.2 0 0 0 12 .8Z"></path></svg></a>
       </nav>
     </header>
 
@@ -90,49 +103,74 @@
         <div class="grid-surface" aria-hidden="true"></div>
         <div class="shell hero-shell">
           <div class="hero-copy">
-            <a class="announcement" href="#projects"><span>Building now</span>Explore Agent Circuit Breaker.</a>
-            <h1>Security engineering<br>for systems that<br>actually move.</h1>
-            <p class="hero-lede">I work where cloud platforms, sensitive data, identity, automation, and AI agents overlap. My focus is turning abstract risk into practical controls that engineers can run every day.</p>
+            <a class="announcement" href="#projects"><span>Building now</span>Agent Circuit Breaker and Horizon Agent Containment.</a>
+            <h1>Deterministic controls for agents before they create real damage.</h1>
+            <p class="hero-lede">I build security systems for the part of AI adoption that gets dangerous fast: tool calls, MCP servers, credentials, filesystem access, data movement, and long-running agent workflows.</p>
             <div class="hero-actions" aria-label="Primary actions">
-              <a class="button button-primary" href="#projects"><span>View projects</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-              <a class="button button-secondary" href="https://www.linkedin.com/in/sagarchhatrala"><span>Connect on LinkedIn</span></a>
+              <a class="button button-primary" href="#projects"><span>See the projects</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+              <a class="button button-secondary" href="https://www.linkedin.com/in/sagarchhatrala"><span>Talk to me</span></a>
             </div>
           </div>
 
           <aside class="hero-product" aria-label="Security operating model">
             <div class="review-window">
-              <div class="window-top"><div><strong>Security operating model</strong><span>cloud, data, identity, AI</span></div><span class="live-pill">Active</span></div>
-              <div class="action-summary"><span class="source-pill">Staff Security Engineer</span><h2>Build controls<br>that survive real workflows.</h2><code>risk -> policy -> automation -> evidence</code></div>
+              <div class="window-top"><div><strong>AI agent security projects</strong><span>runtime gates, state, provenance</span></div><span class="live-pill">Active</span></div>
+              <div class="action-summary"><span class="source-pill">Staff Security Engineer</span><h2>Action control plus capability containment.</h2><code>tool call -> policy -> state -> invariant -> evidence</code></div>
               <div class="signal-grid">
-                <div><span>Cloud</span><strong>AWS / Azure / GCP</strong></div>
-                <div><span>Data</span><strong>Databricks / Snowflake</strong></div>
-                <div><span>AI</span><strong>Agents / MCP / Bedrock</strong></div>
+                <div><span>ACB</span><strong>Pre-execution gate</strong></div>
+                <div><span>HAC</span><strong>Capability graph</strong></div>
+                <div><span>Core</span><strong>Deterministic</strong></div>
               </div>
-              <div class="decision-strip"><span>Current project</span><strong>ACB</strong></div>
+              <div class="decision-strip"><span>Project map</span><strong>ACB + HAC</strong></div>
               <ul class="audit-list" aria-label="Work signals">
-                <li><span></span>cloud guardrails and account boundaries</li>
-                <li><span></span>identity patterns for workforce and systems</li>
-                <li><span></span>AI agent runtime controls and audit trails</li>
+                <li><span></span>block risky actions before execution</li>
+                <li><span></span>track long-horizon provenance and authority</li>
+                <li><span></span>turn agent risk into auditable controls</li>
               </ul>
             </div>
           </aside>
         </div>
-        <div class="shell proof-row" aria-label="Security focus"><div><span>Mode</span><strong>Builder</strong></div><div><span>Depth</span><strong>Cloud + AI</strong></div><div><span>Signal</span><strong>Public work</strong></div></div>
+        <div class="shell proof-row" aria-label="Security focus"><div><span>ACB</span><strong>Runtime safety</strong></div><div><span>HAC</span><strong>State containment</strong></div><div><span>Signal</span><strong>Public code</strong></div></div>
       </section>
 
       <section id="work" class="section split-section">
         <div class="shell split-grid">
           <div class="section-copy"><p class="eyebrow">Work</p><h2>I connect architecture, product risk, and operational security.</h2><p>The work spans cloud foundations, data access, identity boundaries, Kubernetes, appsec, detection, and AI agent safety. The common thread is making controls understandable enough for engineers and reliable enough for production.</p></div>
-          <div class="pipeline" aria-label="Career arc"><article><span>01</span><h3>Scale</h3><p>HPC and infrastructure work at Intel shaped my view of systems-level risk.</p></article><article><span>02</span><h3>Product Security</h3><p>Cisco and Tenable expanded the work into appsec, cloud controls, and standards.</p></article><article><span>03</span><h3>Ownership</h3><p>At Greenlight, I operate across cloud, data, identity, AI systems, and automation.</p></article></div>
+          <div class="pipeline" aria-label="Career arc"><article><span>01</span><h3>Intel</h3><p>HPC and infrastructure work shaped my view of systems-level risk, platform reliability, and the operational realities behind security controls.</p></article><article><span>02</span><h3>Cisco</h3><p>Product security work expanded the focus into application security, secure engineering workflows, threat modeling, and practical controls for teams shipping production software.</p></article><article><span>03</span><h3>Tenable</h3><p>Cloud security research across misconfiguration patterns, IAM exposure, benchmark mapping, and detection logic for AWS, Azure, GCP, and Kubernetes environments.</p></article><article><span>04</span><h3>Greenlight</h3><p>Current ownership across cloud, data, identity, AI systems, and automation, with a focus on controls engineers can understand, run, and audit.</p></article></div>
         </div>
       </section>
 
       <section id="projects" class="section project-section">
         <div class="shell">
-          <div class="section-heading compact"><p class="eyebrow">Projects</p><h2>The project people should not have to discover by guessing the URL.</h2><p>Agent Circuit Breaker is now a first-class project on this site, with a direct path to the project website, source, package, and docs.</p></div>
-          <div class="featured-project">
-            <article class="project-hero-card"><span class="source-pill">Open source project</span><h3>Agent Circuit Breaker</h3><p>A deterministic runtime safety layer for AI agents. It checks proposed shell commands, SQL, filesystem operations, package installs, network calls, MCP tools, and agent trajectories before they execute.</p><div class="hero-actions"><a class="button button-primary" href="https://sagarchhatrala.github.io/agent-circuit-breaker/"><span>Open project site</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="button button-secondary" href="https://github.com/sagarchhatrala/agent-circuit-breaker"><span>GitHub repo</span></a></div></article>
-            <div class="project-grid"><a class="project-link primary-link" href="https://sagarchhatrala.github.io/agent-circuit-breaker/"><span>Project site</span><strong>Runtime safety for AI agents</strong><small>The public project page visitors can explore.</small></a><a class="project-link" href="https://pypi.org/project/agent-circuit-breaker/"><span>Package</span><strong>PyPI install</strong><small>Installable Python package.</small></a><a class="project-link" href="https://github.com/sagarchhatrala/agent-circuit-breaker/blob/main/docs/GETTING_STARTED.md"><span>Docs</span><strong>Getting started</strong><small>Local usage and integration path.</small></a></div>
+          <div class="section-heading compact"><p class="eyebrow">Projects</p><h2>Two projects, one security story.</h2><p>Agent Circuit Breaker protects the immediate execution path. Horizon Agent Containment models what the agent is becoming capable of over time.</p></div>
+          <div class="project-grid two-projects">
+            <article class="project-link project-card-acb">
+              <div class="project-card-top"><span>Production package</span><a class="github-icon" href="https://github.com/sagarchhatrala/agent-circuit-breaker" aria-label="Open Agent Circuit Breaker on GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.82c.56.1.76-.24.76-.54v-2.02c-3.1.68-3.75-1.32-3.75-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.02-.7.08-.68.08-.68 1.12.08 1.72 1.16 1.72 1.16 1 .1 2.62.72 3.22-.54.1-.72.4-1.2.72-1.48-2.48-.28-5.08-1.24-5.08-5.52 0-1.22.44-2.22 1.14-3-.12-.28-.5-1.42.1-2.96 0 0 .94-.3 3.08 1.14.9-.26 1.84-.38 2.78-.38.94 0 1.9.12 2.78.38 2.14-1.44 3.08-1.14 3.08-1.14.6 1.54.22 2.68.1 2.96.72.78 1.14 1.78 1.14 3 0 4.3-2.6 5.24-5.1 5.52.42.36.78 1.06.78 2.14v3.18c0 .3.2.64.78.54A11.2 11.2 0 0 0 12 .8Z"></path></svg></a></div>
+              <strong>Agent Circuit Breaker</strong>
+              <small>A local-first runtime safety gate for AI agents, MCP tools, and coding workflows. It checks proposed commands, filesystem operations, SQL, tool calls, and trajectories before execution.</small>
+              <ul class="project-points"><li>Pre-execution decisions for allow, block, unknown, error, and approval.</li><li>MCP proxy inspection, policy files, audit ledger, SARIF, and PyPI release.</li><li>Best when you need a control point before an agent acts.</li></ul>
+              <div class="project-actions"><a class="button button-primary" href="https://sagarchhatrala.github.io/agent-circuit-breaker/">Project site</a><a class="button button-secondary" href="https://pypi.org/project/agent-circuit-breaker/">PyPI</a></div>
+            </article>
+            <article class="project-link project-card-hac">
+              <div class="project-card-top"><span>Research prototype</span><a class="github-icon" href="https://github.com/sagarchhatrala/horizon-agent-containment" aria-label="Open Horizon Agent Containment on GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.82c.56.1.76-.24.76-.54v-2.02c-3.1.68-3.75-1.32-3.75-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.02-.7.08-.68.08-.68 1.12.08 1.72 1.16 1.72 1.16 1 .1 2.62.72 3.22-.54.1-.72.4-1.2.72-1.48-2.48-.28-5.08-1.24-5.08-5.52 0-1.22.44-2.22 1.14-3-.12-.28-.5-1.42.1-2.96 0 0 .94-.3 3.08 1.14.9-.26 1.84-.38 2.78-.38.94 0 1.9.12 2.78.38 2.14-1.44 3.08-1.14 3.08-1.14.6 1.54.22 2.68.1 2.96.72.78 1.14 1.78 1.14 3 0 4.3-2.6 5.24-5.1 5.52.42.36.78 1.06.78 2.14v3.18c0 .3.2.64.78.54A11.2 11.2 0 0 0 12 .8Z"></path></svg></a></div>
+              <strong>Horizon Agent Containment</strong>
+              <small>A deterministic containment prototype for long-horizon AI agents. It tracks state, provenance, authority, graph relationships, and emergent capabilities before allowing a transition.</small>
+              <ul class="project-points"><li>Blocks capability emergence such as secret-derived data reaching an external destination.</li><li>Models provenance, trust boundaries, explicit delegation, and non-transitive authority.</li><li>Best for explaining the next layer beyond single-action guardrails.</li></ul>
+              <div class="project-actions"><a class="button button-primary" href="https://sagarchhatrala.github.io/horizon-agent-containment/presentation/">Pitch deck</a><a class="button button-secondary" href="./hac/">Site mirror</a></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="compare" class="section compare-section">
+        <div class="shell compare-grid">
+          <div class="section-copy"><p class="eyebrow">How to navigate</p><h2>Pick the project by the question you are asking.</h2><p>Visitors should not have to know the internal project names. This page routes them by the security problem they care about.</p></div>
+          <div class="comparison-table" role="table" aria-label="Project comparison">
+            <div role="row" class="table-row table-head"><span role="columnheader">Question</span><span role="columnheader">Start here</span><span role="columnheader">Why</span></div>
+            <div role="row" class="table-row"><span role="cell">Will this tool call hurt me?</span><strong role="cell">ACB</strong><span role="cell">Checks actions before execution.</span></div>
+            <div role="row" class="table-row"><span role="cell">Is this run drifting from the goal?</span><strong role="cell">ACB</strong><span role="cell">Evaluates trajectories and run contracts.</span></div>
+            <div role="row" class="table-row"><span role="cell">What capability did this agent accumulate?</span><strong role="cell">HAC</strong><span role="cell">Evaluates resulting state and capability graph.</span></div>
+            <div role="row" class="table-row"><span role="cell">Can transformed secret data leave later?</span><strong role="cell">HAC</strong><span role="cell">Preserves provenance across derived artifacts.</span></div>
           </div>
         </div>
       </section>
@@ -143,16 +181,16 @@
 
       <section id="proof" class="section visual-section">
         <div class="shell visual-grid">
-          <div class="evidence-panel"><div class="evidence-row"><span>CIS standards</span><strong>AWS and Azure benchmark contribution signal</strong></div><div class="evidence-row"><span>Public speaking</span><strong>Fal.Con, null Bangalore, Cisco security talks</strong></div><div class="evidence-row"><span>Open source</span><strong>Agent Circuit Breaker for AI agent runtime safety</strong></div></div>
-          <div class="section-copy"><p class="eyebrow">Proof</p><h2>Different from a normal security portfolio because the work is concrete.</h2><p>This page is designed to route a human quickly: what I work on, why it matters, where the public proof is, and what I am building now.</p><div class="mini-ledger" aria-label="Public record links"><div><span>Project</span><strong><a href="https://sagarchhatrala.github.io/agent-circuit-breaker/">Agent Circuit Breaker</a></strong></div><div><span>Code</span><strong><a href="https://github.com/sagarchhatrala">GitHub profile</a></strong></div><div><span>Writing</span><strong><a href="https://medium.com/@sagarchhatrala">Medium security notes</a></strong></div></div></div>
+          <div class="evidence-panel"><div class="evidence-row"><span>ACB</span><strong>Published package, release workflow, docs, tests, MCP proxy, policy engine</strong></div><div class="evidence-row"><span>HAC</span><strong>Working deterministic engine, scenarios, Streamlit demo, tests, architecture docs</strong></div><div class="evidence-row"><span>Background</span><strong>Cloud, data, identity, Kubernetes, AppSec, AI systems, and security automation</strong></div></div>
+          <div class="section-copy"><p class="eyebrow">Proof</p><h2>Built like security engineering, not a slide-only idea.</h2><p>This page is designed to route a human quickly: what the projects do, why they matter, where the code lives, and which path to open first.</p><div class="mini-ledger" aria-label="Public record links"><div><span>ACB</span><strong><a href="https://github.com/sagarchhatrala/agent-circuit-breaker">GitHub repo</a></strong></div><div><span>HAC</span><strong><a href="https://github.com/sagarchhatrala/horizon-agent-containment">GitHub repo</a></strong></div><div><span>Profile</span><strong><a href="https://github.com/sagarchhatrala">GitHub profile</a></strong></div></div></div>
         </div>
       </section>
 
       <section id="contact" class="section try-section">
-        <div class="shell try-grid"><div class="section-copy"><p class="eyebrow">Contact</p><h2>Cloud, data, identity, and AI security systems.</h2><p>The fastest path is LinkedIn or email. If you are here for the project, start with Agent Circuit Breaker.</p></div><div class="contact-card"><a class="button button-primary" href="mailto:chhatralasagar99@gmail.com">Email me</a><a class="button button-secondary" href="https://www.linkedin.com/in/sagarchhatrala">LinkedIn</a><a class="button button-secondary" href="https://sagarchhatrala.github.io/agent-circuit-breaker/">Agent Circuit Breaker</a></div></div>
+        <div class="shell try-grid"><div class="section-copy"><p class="eyebrow">Contact</p><h2>If you are evaluating AI agent risk, start with the projects.</h2><p>The fastest path is LinkedIn or email. If you are here for the work, inspect the code, read the HAC deck, or try ACB from PyPI.</p></div><div class="contact-card"><a class="button button-primary" href="mailto:chhatralasagar99@gmail.com">Email me</a><a class="button button-secondary" href="https://www.linkedin.com/in/sagarchhatrala">LinkedIn</a><a class="button button-secondary" href="https://github.com/sagarchhatrala">GitHub</a></div></div>
       </section>
     </main>
 
-    <footer class="footer"><div class="shell footer-inner"><a class="footer-brand" href="#top">Sagar Chhatrala</a><div><a href="#projects">Projects</a><a href="https://github.com/sagarchhatrala">GitHub</a><a href="https://www.linkedin.com/in/sagarchhatrala">LinkedIn</a></div></div></footer>
+    <footer class="footer"><div class="shell footer-inner"><a class="footer-brand" href="#top">Sagar Chhatrala</a><div><a href="#projects">Projects</a><a href="https://github.com/sagarchhatrala/agent-circuit-breaker">ACB GitHub</a><a href="https://github.com/sagarchhatrala/horizon-agent-containment">HAC GitHub</a><a href="https://www.linkedin.com/in/sagarchhatrala">LinkedIn</a></div></div></footer>
   </body>
 </html>
