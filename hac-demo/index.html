@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HAC Demo - Horizon Agent Containment</title>
+  <meta name="description" content="Interactive static HAC demo for long-horizon agent containment.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="mark">HAC</span>
+        <div>
+          <h1>Horizon Agent Containment</h1>
+          <p>Static web demo of the local HAC prototype.</p>
+        </div>
+      </div>
+
+      <label class="label" for="scenario">Scenario</label>
+      <select id="scenario">
+        <option value="normal">NORMAL WORKFLOW</option>
+        <option value="exfil">DATA EXFILTRATION</option>
+        <option value="privileged">UNTRUSTED PRIVILEGED EXECUTION</option>
+      </select>
+
+      <section class="panel compact">
+        <h2>Agent</h2>
+        <dl>
+          <div><dt>Agent</dt><dd id="agentId">agent-a</dd></div>
+          <div><dt>Model</dt><dd id="modelFamily">open-weight-demo</dd></div>
+          <div><dt>Trust</dt><dd id="agentTrust">INTERNAL</dd></div>
+        </dl>
+      </section>
+
+      <section class="panel compact">
+        <h2>Core Rule</h2>
+        <p>Evaluate the hypothetical resulting state. Commit only if no security invariant fails.</p>
+      </section>
+    </aside>
+
+    <section class="workspace">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Long-horizon agent security</p>
+          <h2 id="scenarioTitle">Normal workflow</h2>
+          <p id="scenarioSummary">A legitimate internal workflow should complete without creating a forbidden capability.</p>
+        </div>
+        <div class="decision" id="overallDecision">ALLOW</div>
+      </header>
+
+      <section class="grid">
+        <article class="panel wide">
+          <div class="panel-title">
+            <h3>Action History</h3>
+            <span>stateful sequence</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Action</th>
+                  <th>Source</th>
+                  <th>Destination</th>
+                  <th>Capability</th>
+                  <th>Invariant</th>
+                  <th>Decision</th>
+                </tr>
+              </thead>
+              <tbody id="historyRows"></tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">
+            <h3>Current Transition</h3>
+            <span>latest decision</span>
+          </div>
+          <div id="transition" class="transition"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">
+            <h3>Detected Capability</h3>
+            <span>emergent state</span>
+          </div>
+          <div id="capability" class="capability-card"></div>
+        </article>
+
+        <article class="panel wide">
+          <div class="panel-title">
+            <h3>Capability Graph</h3>
+            <span>relationships accumulated over time</span>
+          </div>
+          <div id="graph" class="graph"></div>
+        </article>
+
+        <article class="panel wide">
+          <div class="panel-title">
+            <h3>Current Security State</h3>
+            <span>committed after allowed transitions</span>
+          </div>
+          <pre id="stateJson"></pre>
+        </article>
+      </section>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
