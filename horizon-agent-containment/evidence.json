@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "source_commit": "639a6416494d3e120ba4323cb2d3978b9ea1aa74",
+  "mode": "Recorded HAC Python engine results. Browser replays them without executing tools.",
+  "scenarios": [
+    {
+      "id": "exfil",
+      "title": "Data exfiltration",
+      "summary": "Secret-derived data keeps its lineage through transformation, encryption, and chunking. The external upload is blocked.",
+      "steps": [
+        {
+          "action": "READ_RESOURCE",
+          "source": "secret-db",
+          "destination": "",
+          "decision": "ALLOW",
+          "reason": "Transition preserves configured security invariants.",
+          "invariants": [],
+          "capabilities": [],
+          "transition_id": "f255882ff87d74ad",
+          "committed_state_unchanged": false
+        },
+        {
+          "action": "CREATE_ARTIFACT",
+          "source": "secret-db",
+          "destination": "secret-report",
+          "decision": "ALLOW",
+          "reason": "Transition preserves configured security invariants.",
+          "invariants": [],
+          "capabilities": [],
+          "transition_id": "58d3724e212719a7",
+          "committed_state_unchanged": false
+        },
+        {
+          "action": "TRANSFORM_ARTIFACT",
+          "source": "secret-report",
+          "destination": "summary",
+          "decision": "ALLOW",
+          "reason": "Transition preserves configured security invariants.",
+          "invariants": [],
+          "capabilities": [],
+          "transition_id": "59126c6746933685",
+          "committed_state_unchanged": false
+        },
+        {
+          "action": "ENCRYPT_ARTIFACT",
+          "source": "summary",
+          "destination": "summary.enc",
+          "decision": "ALLOW",
+          "reason": "Transition preserves configured security invariants.",
+          "invariants": [],
+          "capabilities": [],
+          "transition_id": "8f486ef2c05fdbd6",
+          "committed_state_unchanged": false
+        },
+        {
+          "action": "SPLIT_ARTIFACT",
+          "source": "summary.enc",
+          "destination": "chunk-1, chunk-2",
+          "decision": "ALLOW",
+          "reason": "Transition preserves configured security invariants.",
+          "invariants": [],
+          "capabilities": [],
+          "transition_id": "267e01111cccdaff",
+          "committed_state_unchanged": false
+        },
+        {
+          "action": "UPLOAD_ARTIFACT",
+          "source": "chunk-1",
+          "destination": "public-internet",
+          "decision": "BLOCK",
+          "reason": "Capability: DATA_EXFILTRATION. Reason: SECRET-DERIVED artifact is crossing into an external destination. Invariant: SECRET_TO_EXTERNAL.",
+          "invariants": [
+            "SECRET_TO_EXTERNAL",
+            "TRUST_BOUNDARY"
+          ],
+          "capabilities": [
+            "DATA_EXFILTRATION",
+            "TRUST_BOUNDARY_CROSSING"
+          ],
+          "transition_id": "187334720d4c09b9",
+          "committed_state_unchanged": true
+        }
+      ]
+    },
+    {
+      "id": "normal",
+      "title": "Normal workflow",
+      "summary": "An internal development workflow completes while preserving the configured security invariants.",
+      "steps": [
+        {
+          "action": "READ_RESOURCE",
+          "source": "repo",
+          "destination": "",
+          "decision": "ALLOW",
+          "reason": "Transition preserves configured security invariants.",
+          "invariants": [],
+          "capabilities": [],
+          "transition_id": "c61fb8357d6b62f1",
+          "committed_state_unchanged": false
+        },
+        {
+          "action": "CREATE_ARTIFACT",
+          "source": "repo",
+          "destination": "code-change",
+          "decision": "ALLOW",
+          "reason": "Transition preserves configured security invariants.",
+          "invariants": [],
+          "capabilities": [],
+          "transition_id": "7d523f5da8f6d4d7",
+          "committed_state_unchanged": false
+        },
+        {
+          "action": "MODIFY_CODE",
+          "source": "code-change",
+          "destination": "",
+          "decision": "ALLOW",
+          "reason": "Transition preserves configured security invariants.",
+          "invariants": [],
+          "capabilities": [],
+          "transition_id": "273d604155e2ee6b",
+          "committed_state_unchanged": false
+        },
+        {
+          "action": "RUN_TESTS",
+          "source": "code-change",
+          "destination": "",
+          "decision": "ALLOW",
+          "reason": "Transition preserves configured security invariants.",
+          "invariants": [],
+          "capabilities": [],
+          "transition_id": "61a99d0c033ac9aa",
+          "committed_state_unchanged": false
+        },
+        {
+          "action": "BUILD_ARTIFACT",
+          "source": "code-change",
+          "destination": "build-1",
+          "decision": "ALLOW",
+          "reason": "Transition preserves configured security invariants.",
+          "invariants": [],
+          "capabilities": [],
+          "transition_id": "e5cfde49a8f574fb",
+          "committed_state_unchanged": false
+        },
+        {
+          "action": "STORE_ARTIFACT",
+          "source": "build-1",
+          "destination": "internal-store",
+          "decision": "ALLOW",
+          "reason": "Transition preserves configured security invariants.",
+          "invariants": [],
+          "capabilities": [],
+          "transition_id": "8f9faebadbfaea0c",
+          "committed_state_unchanged": false
+        }
+      ]
+    },
+    {
+      "id": "privileged",
+      "title": "Untrusted privileged execution",
+      "summary": "Processing an external artifact does not make it trusted. Its elevated execution is blocked.",
+      "steps": [
+        {
+          "action": "DOWNLOAD_EXTERNAL",
+          "source": "external-package",
+          "destination": "pkg",
+          "decision": "ALLOW",
+          "reason": "Transition preserves configured security invariants.",
+          "invariants": [],
+          "capabilities": [],
+          "transition_id": "92479b49d165b5b7",
+          "committed_state_unchanged": false
+        },
+        {
+          "action": "STORE_ARTIFACT",
+          "source": "pkg",
+          "destination": "internal-store",
+          "decision": "ALLOW",
+          "reason": "Transition preserves configured security invariants.",
+          "invariants": [],
+          "capabilities": [],
+          "transition_id": "197ceabe64273bc3",
+          "committed_state_unchanged": false
+        },
+        {
+          "action": "PROCESS_ARTIFACT",
+          "source": "pkg",
+          "destination": "processed-pkg",
+          "decision": "ALLOW",
+          "reason": "Transition preserves configured security invariants.",
+          "invariants": [],
+          "capabilities": [],
+          "transition_id": "4950726f5ffb556c",
+          "committed_state_unchanged": false
+        },
+        {
+          "action": "EXECUTE_ARTIFACT",
+          "source": "processed-pkg",
+          "destination": "",
+          "decision": "BLOCK",
+          "reason": "Capability: UNTRUSTED_EXECUTION. Reason: UNTRUSTED artifact is executable with elevated privilege. Invariant: UNTRUSTED_TO_PRIVILEGED.",
+          "invariants": [
+            "UNTRUSTED_TO_PRIVILEGED"
+          ],
+          "capabilities": [
+            "UNTRUSTED_EXECUTION"
+          ],
+          "transition_id": "9ab071fea0972243",
+          "committed_state_unchanged": true
+        }
+      ]
+    }
+  ]
+}

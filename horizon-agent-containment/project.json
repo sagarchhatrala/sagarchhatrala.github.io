@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "name": "Horizon Agent Containment",
+  "abbreviation": "HAC",
+  "author": {
+    "name": "Sagar Chhatrala",
+    "url": "https://sagarchhatrala.github.io/"
+  },
+  "version": "0.1.0",
+  "status": "Research prototype",
+  "requires_python": ">=3.10",
+  "website": "https://sagarchhatrala.github.io/horizon-agent-containment/",
+  "repository": "https://github.com/sagarchhatrala/horizon-agent-containment",
+  "source_commit": "639a6416494d3e120ba4323cb2d3978b9ea1aa74",
+  "summary": "Deterministic containment around explicitly modeled agent state, provenance, authority, capabilities, and security invariants.",
+  "capabilities": [
+    "Provenance propagation through transformations",
+    "Capabilities derived from accumulated state and graph relationships",
+    "Explicit delegation and authority checks",
+    "Hypothetical transitions with atomic commit or discard",
+    "Fail-closed decisions for invalid modeled inputs"
+  ],
+  "invariants": [
+    "SECRET_TO_EXTERNAL",
+    "UNTRUSTED_TO_PRIVILEGED",
+    "NON_TRANSITIVE_AUTHORITY",
+    "EXPLICIT_DELEGATION",
+    "CREDENTIAL_ESCALATION",
+    "TRUST_BOUNDARY"
+  ],
+  "scope": "The engine controls its modeled state. A trusted integration must represent real effects accurately and honor decisions. It is not an OS sandbox, universal tool interceptor, IAM replacement, or guarantee of arbitrary-agent containment.",
+  "evidence": {
+    "path": "./evidence.json",
+    "browser_behavior": "Replays recorded Python engine results. No tool execution occurs in the browser.",
+    "scenarios": [
+      "Data exfiltration",
+      "Normal workflow",
+      "Untrusted privileged execution"
+    ]
+  }
+}

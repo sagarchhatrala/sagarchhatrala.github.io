@@ -1,0 +1,533 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-20",
+  "version": "1.6.9",
+  "source_commit": "55b9646ea78384dd2a3c57bf1ff7b67048d75b16",
+  "mode": "Recorded Python evaluations and synthetic local runtime validation. Browser interaction replays these results; it does not execute commands.",
+  "checks": [
+    {
+      "id": "shell",
+      "input": "git push --force origin main",
+      "result": {
+        "command": "git push --force origin main",
+        "verdict": "block",
+        "decision": "BLOCK",
+        "matched_rule": "cmd_git_force_push",
+        "rule_details": {
+          "id": "cmd_git_force_push",
+          "title": "Git force push detected",
+          "severity": "HIGH",
+          "response": "block",
+          "metadata": {
+            "description": "Blocks git push operations using --force, -f, or --force-with-lease",
+            "category": "command"
+          }
+        },
+        "operation_analysis": {
+          "operation": "unknown",
+          "targets": [],
+          "flags": [],
+          "is_dangerous": false,
+          "danger_reason": null
+        },
+        "command_analysis": {
+          "tokens": [
+            "git",
+            "push",
+            "--force",
+            "origin",
+            "main"
+          ],
+          "command": "git",
+          "args": [
+            "push",
+            "--force",
+            "origin",
+            "main"
+          ],
+          "segments": [
+            {
+              "raw": "git push --force origin main",
+              "tokens": [
+                "git",
+                "push",
+                "--force",
+                "origin",
+                "main"
+              ],
+              "command": "git",
+              "args": [
+                "push",
+                "--force",
+                "origin",
+                "main"
+              ],
+              "risk_flags": [
+                "cmd_git_force_push"
+              ],
+              "risk_score": 85,
+              "is_dangerous": true,
+              "danger_reason": "Git force push detected"
+            }
+          ],
+          "operators": [],
+          "is_valid": true,
+          "error": null,
+          "risk_flags": [
+            "cmd_git_force_push"
+          ],
+          "risk_score": 85,
+          "is_dangerous": true,
+          "danger_reason": "Git force push detected"
+        },
+        "sql_analysis": {
+          "tokens": [
+            "git",
+            "push"
+          ],
+          "statements": [
+            {
+              "raw": "git push",
+              "tokens": [
+                "git",
+                "push"
+              ],
+              "statement_type": "git",
+              "risk_flags": [],
+              "risk_score": 0,
+              "is_dangerous": false,
+              "danger_reason": null
+            }
+          ],
+          "is_valid": true,
+          "error": null,
+          "risk_flags": [],
+          "risk_score": 0,
+          "is_dangerous": false,
+          "danger_reason": null
+        },
+        "risk_score": 85,
+        "error": null,
+        "policy": null,
+        "engine_version": "1.6.9",
+        "inspection_coverage": {
+          "schema_version": 1,
+          "status": "complete",
+          "mandatory_complete": true,
+          "allow_eligible": false,
+          "auto_allow_reason": null,
+          "records": [
+            {
+              "name": "filesystem",
+              "target": "command",
+              "mandatory": true,
+              "status": "complete",
+              "error": null,
+              "limits_reached": false,
+              "metadata": {
+                "operation": "unknown",
+                "targets": 0,
+                "dangerous": false
+              }
+            },
+            {
+              "name": "command",
+              "target": "command",
+              "mandatory": true,
+              "status": "complete",
+              "error": null,
+              "limits_reached": false,
+              "metadata": {
+                "segments": 1,
+                "operators": [],
+                "risk_flags": [
+                  "cmd_git_force_push"
+                ],
+                "dangerous": true
+              }
+            },
+            {
+              "name": "sql",
+              "target": "command",
+              "mandatory": true,
+              "status": "complete",
+              "error": null,
+              "limits_reached": false,
+              "metadata": {
+                "statements": 1,
+                "risk_flags": [],
+                "dangerous": false
+              }
+            }
+          ],
+          "limits": {
+            "max_command_bytes": 262144
+          },
+          "unknowns": []
+        },
+        "decision_validation": {
+          "schema_version": 1,
+          "status": "valid",
+          "allow_source": null,
+          "allow_permitted": false,
+          "reason": "no allow decision to validate"
+        }
+      }
+    },
+    {
+      "id": "sql",
+      "input": "DROP TABLE users",
+      "result": {
+        "command": "DROP TABLE users",
+        "verdict": "block",
+        "decision": "BLOCK",
+        "matched_rule": "sql_drop_table",
+        "rule_details": {
+          "id": "sql_drop_table",
+          "title": "SQL DROP TABLE detected",
+          "severity": "CRITICAL",
+          "response": "block",
+          "metadata": {
+            "description": "Blocks SQL DROP TABLE statements",
+            "category": "sql"
+          }
+        },
+        "operation_analysis": {
+          "operation": "unknown",
+          "targets": [],
+          "flags": [],
+          "is_dangerous": false,
+          "danger_reason": null
+        },
+        "command_analysis": {
+          "tokens": [
+            "DROP",
+            "TABLE",
+            "users"
+          ],
+          "command": "DROP",
+          "args": [
+            "TABLE",
+            "users"
+          ],
+          "segments": [
+            {
+              "raw": "DROP TABLE users",
+              "tokens": [
+                "DROP",
+                "TABLE",
+                "users"
+              ],
+              "command": "DROP",
+              "args": [
+                "TABLE",
+                "users"
+              ],
+              "risk_flags": [],
+              "risk_score": 0,
+              "is_dangerous": false,
+              "danger_reason": null
+            }
+          ],
+          "operators": [],
+          "is_valid": true,
+          "error": null,
+          "risk_flags": [],
+          "risk_score": 0,
+          "is_dangerous": false,
+          "danger_reason": null
+        },
+        "sql_analysis": {
+          "tokens": [
+            "DROP",
+            "TABLE",
+            "users"
+          ],
+          "statements": [
+            {
+              "raw": "DROP TABLE users",
+              "tokens": [
+                "DROP",
+                "TABLE",
+                "users"
+              ],
+              "statement_type": "drop",
+              "risk_flags": [
+                "sql_drop_table"
+              ],
+              "risk_score": 100,
+              "is_dangerous": true,
+              "danger_reason": "DROP TABLE detected"
+            }
+          ],
+          "is_valid": true,
+          "error": null,
+          "risk_flags": [
+            "sql_drop_table"
+          ],
+          "risk_score": 100,
+          "is_dangerous": true,
+          "danger_reason": "DROP TABLE detected"
+        },
+        "risk_score": 100,
+        "error": null,
+        "policy": null,
+        "engine_version": "1.6.9",
+        "inspection_coverage": {
+          "schema_version": 1,
+          "status": "complete",
+          "mandatory_complete": true,
+          "allow_eligible": false,
+          "auto_allow_reason": null,
+          "records": [
+            {
+              "name": "filesystem",
+              "target": "command",
+              "mandatory": true,
+              "status": "complete",
+              "error": null,
+              "limits_reached": false,
+              "metadata": {
+                "operation": "unknown",
+                "targets": 0,
+                "dangerous": false
+              }
+            },
+            {
+              "name": "command",
+              "target": "command",
+              "mandatory": true,
+              "status": "complete",
+              "error": null,
+              "limits_reached": false,
+              "metadata": {
+                "segments": 1,
+                "operators": [],
+                "risk_flags": [],
+                "dangerous": false
+              }
+            },
+            {
+              "name": "sql",
+              "target": "command",
+              "mandatory": true,
+              "status": "complete",
+              "error": null,
+              "limits_reached": false,
+              "metadata": {
+                "statements": 1,
+                "risk_flags": [
+                  "sql_drop_table"
+                ],
+                "dangerous": true
+              }
+            }
+          ],
+          "limits": {
+            "max_command_bytes": 262144
+          },
+          "unknowns": []
+        },
+        "decision_validation": {
+          "schema_version": 1,
+          "status": "valid",
+          "allow_source": null,
+          "allow_permitted": false,
+          "reason": "no allow decision to validate"
+        }
+      }
+    },
+    {
+      "id": "unknown",
+      "input": "ls /home",
+      "result": {
+        "command": "ls /home",
+        "verdict": "unknown",
+        "decision": "UNKNOWN",
+        "matched_rule": null,
+        "rule_details": null,
+        "operation_analysis": {
+          "operation": "unknown",
+          "targets": [],
+          "flags": [],
+          "is_dangerous": false,
+          "danger_reason": null
+        },
+        "command_analysis": {
+          "tokens": [
+            "ls",
+            "/home"
+          ],
+          "command": "ls",
+          "args": [
+            "/home"
+          ],
+          "segments": [
+            {
+              "raw": "ls /home",
+              "tokens": [
+                "ls",
+                "/home"
+              ],
+              "command": "ls",
+              "args": [
+                "/home"
+              ],
+              "risk_flags": [],
+              "risk_score": 0,
+              "is_dangerous": false,
+              "danger_reason": null
+            }
+          ],
+          "operators": [],
+          "is_valid": true,
+          "error": null,
+          "risk_flags": [],
+          "risk_score": 0,
+          "is_dangerous": false,
+          "danger_reason": null
+        },
+        "sql_analysis": {
+          "tokens": [
+            "ls",
+            "/home"
+          ],
+          "statements": [
+            {
+              "raw": "ls /home",
+              "tokens": [
+                "ls",
+                "/home"
+              ],
+              "statement_type": "ls",
+              "risk_flags": [],
+              "risk_score": 0,
+              "is_dangerous": false,
+              "danger_reason": null
+            }
+          ],
+          "is_valid": true,
+          "error": null,
+          "risk_flags": [],
+          "risk_score": 0,
+          "is_dangerous": false,
+          "danger_reason": null
+        },
+        "risk_score": 0,
+        "error": null,
+        "policy": null,
+        "engine_version": "1.6.9",
+        "inspection_coverage": {
+          "schema_version": 1,
+          "status": "complete",
+          "mandatory_complete": true,
+          "allow_eligible": false,
+          "auto_allow_reason": null,
+          "records": [
+            {
+              "name": "filesystem",
+              "target": "command",
+              "mandatory": true,
+              "status": "complete",
+              "error": null,
+              "limits_reached": false,
+              "metadata": {
+                "operation": "unknown",
+                "targets": 0,
+                "dangerous": false
+              }
+            },
+            {
+              "name": "command",
+              "target": "command",
+              "mandatory": true,
+              "status": "complete",
+              "error": null,
+              "limits_reached": false,
+              "metadata": {
+                "segments": 1,
+                "operators": [],
+                "risk_flags": [],
+                "dangerous": false
+              }
+            },
+            {
+              "name": "sql",
+              "target": "command",
+              "mandatory": true,
+              "status": "complete",
+              "error": null,
+              "limits_reached": false,
+              "metadata": {
+                "statements": 1,
+                "risk_flags": [],
+                "dangerous": false
+              }
+            }
+          ],
+          "limits": {
+            "max_command_bytes": 262144
+          },
+          "unknowns": []
+        },
+        "decision_validation": {
+          "schema_version": 1,
+          "status": "valid",
+          "allow_source": null,
+          "allow_permitted": false,
+          "reason": "no allow decision to validate"
+        }
+      }
+    }
+  ],
+  "runtime_validation": {
+    "passed": true,
+    "results": [
+      {
+        "evidence": {
+          "executed": true
+        },
+        "id": "allowed_runtime_execution",
+        "passed": true
+      },
+      {
+        "evidence": {
+          "approved_executed": true,
+          "pending_executed": false,
+          "replay_error": "approval is not valid or has already been consumed",
+          "replay_executed": false
+        },
+        "id": "approval_required_consumed_once",
+        "passed": true
+      },
+      {
+        "evidence": {
+          "after": 2,
+          "before": 2,
+          "executed": false
+        },
+        "id": "denied_runtime_execution_no_side_effect",
+        "passed": true
+      },
+      {
+        "evidence": {
+          "checkpoint_entries": 1,
+          "current_entries": 1,
+          "error": null,
+          "is_valid": true,
+          "signature_checked": true
+        },
+        "id": "audit_checkpoint_verifies",
+        "passed": true
+      },
+      {
+        "evidence": {
+          "failure_count": 0,
+          "warning_count": 0
+        },
+        "id": "production_check_passes",
+        "passed": true
+      }
+    ]
+  }
+}

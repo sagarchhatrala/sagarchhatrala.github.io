@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "updated": "2026-10-20",
+  "name": "Sagar Chhatrala",
+  "role": "Staff Security Engineer",
+  "organization": "Greenlight",
+  "location": "Bengaluru, India",
+  "website": "https://sagarchhatrala.github.io/",
+  "summary": "Security engineer, researcher, and open-source builder working across cloud, identity, data, and AI systems. Creator of Agent Circuit Breaker and Horizon Agent Containment.",
+  "contact": {
+    "email": "chhatralasagar99@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/sagarchhatrala",
+    "github": "https://github.com/sagarchhatrala"
+  },
+  "expertise": [
+    "AI agent security",
+    "Cloud security",
+    "Identity and access management",
+    "MCP security",
+    "Kubernetes security",
+    "Data security",
+    "Application security",
+    "Security automation"
+  ],
+  "experience": [
+    {
+      "organization": "Greenlight",
+      "start": "2023-12",
+      "end": null,
+      "current_role": "Staff Security Engineer",
+      "current_role_since": "2025-01",
+      "focus": "Cloud and AI security, infrastructure, identity, data access, and automation"
+    },
+    {
+      "organization": "Tenable",
+      "start": "2022-04",
+      "end": "2023-10",
+      "role": "Senior Cloud Security Research Engineer",
+      "focus": "Cloud threat research, detections, attack-path analysis, and security guidance"
+    },
+    {
+      "organization": "Cisco",
+      "start": "2020-04",
+      "end": "2022-03",
+      "role": "Software Security Engineer",
+      "focus": "Identity, supply-chain security, and threat modeling"
+    },
+    {
+      "organization": "Intel",
+      "start": "2017-01",
+      "end": "2020-04",
+      "role": "System Programmer, Security",
+      "focus": "Security automation and incident response for distributed infrastructure"
+    }
+  ],
+  "contributions": {
+    "standards": [
+      "CIS AWS Foundations Benchmark v1.5.0 co-author",
+      "CIS Microsoft Azure Foundations Benchmark v2.0.0 co-author"
+    ],
+    "speaking": [
+      "CrowdStrike Fal.Con: cloud, data, and AI security",
+      "Cisco SecCon 2020: DNS over HTTPS and software supply-chain security"
+    ]
+  },
+  "projects": [
+    {
+      "name": "Agent Circuit Breaker",
+      "abbreviation": "ACB",
+      "status": "Published Python package; beta",
+      "question": "Should this agent action execute?",
+      "description": "Deterministic action and trajectory checks, plus a stateful runtime gate with exact approvals and durable local run state for trusted agent integrations.",
+      "website": "https://sagarchhatrala.github.io/agent-circuit-breaker/",
+      "repository": "https://github.com/sagarchhatrala/agent-circuit-breaker",
+      "package": "https://pypi.org/project/agent-circuit-breaker/",
+      "install": "pip install agent-circuit-breaker",
+      "decisions": [
+        "ALLOW",
+        "BLOCK",
+        "UNKNOWN",
+        "ERROR",
+        "PENDING_APPROVAL"
+      ],
+      "scope": "Strongest path: single-host trusted RuntimeGate integration with every protected side effect mediated and workers sharing a local SQLite store. CLI/API and MCP evaluation have distinct advisory or adapter boundaries. UNKNOWN is not execution authority. Not an OS sandbox or distributed coordinator.",
+      "version": "1.6.9",
+      "structured_details": "https://sagarchhatrala.github.io/agent-circuit-breaker/project.json",
+      "directory_listings": [
+        {
+          "name": "FAUN.toolbox",
+          "url": "https://faun.dev/toolbox/agent-circuit-breaker/",
+          "description": "Developer-tool directory listing with a dedicated profile and scorecard."
+        }
+      ]
+    },
+    {
+      "name": "Horizon Agent Containment",
+      "abbreviation": "HAC",
+      "status": "Research prototype",
+      "question": "What can this agent become capable of?",
+      "description": "A deterministic stateful engine that tracks provenance, authority, relationships, and emergent capabilities, then evaluates security invariants before committing a transition.",
+      "repository": "https://github.com/sagarchhatrala/horizon-agent-containment",
+      "illustrated_scenarios": "https://sagarchhatrala.github.io/horizon-agent-containment/#scenario",
+      "scope": "Research prototype around explicitly modeled state and invariants. The project page replays recorded Python engine results. A trusted integration must accurately model effects and honor the decision; unmodeled tool actions remain outside scope.",
+      "website": "https://sagarchhatrala.github.io/horizon-agent-containment/",
+      "structured_details": "https://sagarchhatrala.github.io/horizon-agent-containment/project.json"
+    }
+  ]
+}

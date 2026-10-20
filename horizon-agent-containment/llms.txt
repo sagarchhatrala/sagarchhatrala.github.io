@@ -1,0 +1,32 @@
+# Horizon Agent Containment (HAC)
+
+> Research prototype by Sagar Chhatrala for deterministic containment around explicitly modeled state, provenance, authority, capabilities, and security invariants.
+
+Version: 0.1.0. Python: 3.10+. Source revision: 639a6416494d3e120ba4323cb2d3978b9ea1aa74.
+Project page: https://sagarchhatrala.github.io/horizon-agent-containment/
+Source: https://github.com/sagarchhatrala/horizon-agent-containment
+
+## How it works
+
+Validate the current state and proposed action. Clone the state and apply a hypothetical transition. Update provenance and relationships, derive capabilities, and evaluate security invariants. ALLOW commits the new state; BLOCK preserves committed state.
+
+Transforming, encrypting, and chunking data does not implicitly declassify its provenance. Authority and delegation are explicitly represented. Model family does not drive authorization.
+
+## Recorded scenarios
+
+- Data exfiltration: read secret, create artifact, transform, encrypt, split; external upload blocks with SECRET_TO_EXTERNAL.
+- Normal workflow: read repository, create code artifact, modify, test, build, store internally; all six modeled transitions allow.
+- Untrusted privileged execution: download, store, process an external artifact; elevated execution blocks with UNTRUSTED_TO_PRIVILEGED.
+
+The browser replays recorded results from the Python engine. It does not execute tools. The scenarios and explanation are sections of the single project page.
+
+## Limits
+
+Research prototype, not a production containment guarantee. A trusted integration must accurately model the real world and honor the decision. Unmodeled actions, arbitrary host processes, and bypassing tool calls are outside scope. HAC does not replace OS sandboxing, IAM, or monitoring.
+
+## More detail
+
+- [Structured project facts](./project.json)
+- [Recorded engine results](./evidence.json)
+- [Security model](https://github.com/sagarchhatrala/horizon-agent-containment/blob/main/docs/SECURITY_MODEL.md)
+- [Related ACB project](https://sagarchhatrala.github.io/agent-circuit-breaker/)

@@ -1,0 +1,46 @@
+# Agent Circuit Breaker (ACB)
+
+> Open-source Python safety layer by Sagar Chhatrala. Local deterministic checks for agent actions and trajectories, plus a stateful RuntimeGate for trusted single-host execution integrations.
+
+Reviewed version: 1.6.9 (beta), 2026-10-20.
+Source revision: 55b9646ea78384dd2a3c57bf1ff7b67048d75b16.
+Python: 3.11+. License: MIT. Default runtime dependencies: Python standard library only.
+Install: python -m pip install agent-circuit-breaker==1.6.9
+
+## Supported capabilities
+
+- Evaluate shell commands, filesystem operations, and SQL against supported deterministic checks.
+- Explicit outcomes: ALLOW, BLOCK, UNKNOWN, PENDING_APPROVAL, ERROR. UNKNOWN is not execution authority.
+- Trajectory checks use run history and configured contracts for actors, delegation, output channels, targets, blocked retries, and supported secret-to-egress patterns.
+- RuntimeGate and RuntimeToolExecutor bind execution to current policy, configured principal/capability authority, action-specific approvals, and run state.
+- Exact approvals and authorizations are consumed once before the executor starts.
+- SQLite persists run history, suspension, revocation, execution starts, and outcomes. Unresolved execution requires explicit trusted reconciliation.
+- Local audit chains, optional HMAC signatures, and independent checkpoints support evidence verification.
+- CLI runtime-health, runtime-inspect, production-check, and safe-validate inspect the local runtime setup. safe-validate uses synthetic test-file side effects.
+
+## Integration and enforcement boundary
+
+The strongest supported path is a single-host trusted runtime integration: every protected side effect passes through RuntimeToolExecutor, execute_authorized, or execute_approved; trusted workers share one local SQLite store; private keys remain outside model-visible and attacker-writable state.
+
+CLI and Python policy evaluation are advisory unless the caller gates execution on the results. The MCP stdio/optional HTTP proxy can stop forwarding unsafe or unknown calls by policy, but does not implement RuntimeGate's exact approvals, suspension/revocation, or durable execution start/outcome guarantees.
+
+ACB is not an OS sandbox, arbitrary-agent containment system, distributed coordinator, or guarantee of exactly-once external effects. Direct tool/subprocess calls that bypass ACB are outside scope. Local HMAC logs are not immutable storage; protect keys and retain rollback-detection checkpoints independently. Readiness checks cannot prove application-wide mediation.
+
+## Website examples
+
+The browser replays recorded v1.6.9 results; it does not execute commands or run Python.
+- git push --force origin main: BLOCK.
+- DROP TABLE users: BLOCK.
+- ls /home: UNKNOWN.
+- Synthetic safe-write approval scenario: pending request does not execute; exact approval executes; replay does not execute. This scenario uses the validator's custom evaluator and constrained executor, not a claim that arbitrary writes pass default policy.
+
+## Sources
+
+- [FAUN.toolbox listing and scorecard](https://faun.dev/toolbox/agent-circuit-breaker/): ACB is listed in FAUN.dev’s developer-tool directory.
+- [Source repository](https://github.com/sagarchhatrala/agent-circuit-breaker)
+- [Release](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.6.9/docs/releases/v1.6.9.md)
+- [Enforcement matrix](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.6.9/docs/ADAPTER_ENFORCEMENT_MATRIX.md)
+- [Runtime hardening](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.6.9/docs/RUNTIME_PRODUCTION_HARDENING.md)
+- [Recorded website evidence](./evidence.json)
+- [Structured project facts](./project.json)
+- [Author](https://sagarchhatrala.github.io/)

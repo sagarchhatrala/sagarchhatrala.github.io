@@ -1,0 +1,48 @@
+# Sagar Chhatrala
+
+> Staff Security Engineer at Greenlight, based in Bengaluru, India. Security engineer, researcher, and open-source builder focused on cloud, identity, data, and AI agent security.
+
+## Professional background
+
+- Greenlight, December 2023–present. Staff Security Engineer since January 2025. Cloud and AI security, secure infrastructure, identity, data access, and automation.
+- Tenable, April 2022–October 2023. Senior Cloud Security Research Engineer. Cloud detections, attack-path research, and security guidance.
+- Cisco, April 2020–March 2022. Software Security Engineer. Identity, supply-chain security, and threat modeling.
+- Intel, January 2017–April 2020. System Programmer, Security. Security automation and incident response for distributed infrastructure.
+- Co-author of CIS AWS Foundations Benchmark v1.5.0 and CIS Microsoft Azure Foundations Benchmark v2.0.0.
+- Speaker at CrowdStrike Fal.Con on cloud, data, and AI security, and Cisco SecCon 2020 on DNS over HTTPS and software supply-chain security.
+
+## Projects
+
+### Agent Circuit Breaker (ACB)
+
+A published beta Python package (v1.6.9) for deterministic checks on shell commands, filesystem operations, SQL, MCP tools, and agent trajectories. Install: `pip install agent-circuit-breaker`.
+
+The stateful RuntimeGate adds exact approvals, single-use authorization, scoped authority, and durable SQLite run state for trusted single-host integrations. Every protected side effect must be mediated. CLI/API evaluation and the MCP proxy have distinct advisory or adapter boundaries; the MCP proxy does not inherit RuntimeGate's approval and durable execution guarantees.
+
+Decisions include ALLOW, BLOCK, UNKNOWN, ERROR, and PENDING_APPROVAL. UNKNOWN is not execution authority. ACB is not an OS sandbox or distributed coordinator. Website interactions replay documented or recorded examples and never execute commands or run the Python engine.
+
+- [Structured capabilities and limits](https://sagarchhatrala.github.io/agent-circuit-breaker/project.json)
+- [Project site](https://sagarchhatrala.github.io/agent-circuit-breaker/)
+- [Source and quickstart](https://github.com/sagarchhatrala/agent-circuit-breaker)
+- [PyPI package](https://pypi.org/project/agent-circuit-breaker/)
+- [FAUN.toolbox listing and scorecard](https://faun.dev/toolbox/agent-circuit-breaker/): ACB is listed in FAUN.dev’s developer-tool directory.
+
+### Horizon Agent Containment (HAC)
+
+A research prototype for deterministic containment of long-horizon agents. It tracks state, provenance, authority, and graph relationships, then evaluates whether a transition creates a capability forbidden by configured security invariants. For example, transformed secret-derived data retains its lineage and an external upload is blocked.
+
+HAC operates on explicitly modeled state and invariants. The consolidated HAC project page hosts recorded scenario replays. The executable Python engine and Streamlit demo are in the repository. ACB handles actions and trajectories; HAC investigates capabilities arising from accumulated state. The projects are independent and can be complementary.
+
+- [Source, architecture, and executable demo](https://github.com/sagarchhatrala/horizon-agent-containment)
+- [Project and recorded scenarios](https://sagarchhatrala.github.io/horizon-agent-containment/)
+- [Structured HAC project facts](https://sagarchhatrala.github.io/horizon-agent-containment/project.json)
+
+## Profile and contact
+
+- [Portfolio](https://sagarchhatrala.github.io/)
+- [Structured profile JSON](https://sagarchhatrala.github.io/profile.json)
+- [GitHub](https://github.com/sagarchhatrala)
+- [LinkedIn](https://www.linkedin.com/in/sagarchhatrala)
+- Email: chhatralasagar99@gmail.com
+
+Updated: 2026-10-20. This is an author-maintained profile. Project repositories are the source for implementation details and current releases.
