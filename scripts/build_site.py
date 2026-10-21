@@ -6,6 +6,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / '_site'
 ROOT_FILES = ('index.html', 'styles.css', 'app.js', 'llms.txt', 'profile.json', 'robots.txt', 'sitemap.xml')
 PROJECT_FILES = {
+    'purpose-trace': ('index.html', 'styles.css', 'app.js', 'mark.svg', 'llms.txt', 'project.json', 'evidence.json'),
     'agent-circuit-breaker': ('index.html', 'styles.css', 'app.js', 'mark.svg', 'llms.txt', 'project.json', 'evidence.json'),
     'horizon-agent-containment': ('index.html', 'styles.css', 'app.js', 'mark.svg', 'llms.txt', 'project.json', 'evidence.json'),
 }
@@ -34,7 +35,7 @@ def build():
         target = OUTPUT / name
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, target)
-    print(f'Built {len(files)} public files with exactly three page entry points.')
+    print(f'Built {len(files)} public files with exactly four page entry points.')
 
 if __name__ == '__main__':
     build()

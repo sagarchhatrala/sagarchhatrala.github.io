@@ -9,7 +9,7 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent.parent
 site = (ROOT / (sys.argv[1] if len(sys.argv) > 1 else '_site')).resolve()
-expected = {'index.html', 'agent-circuit-breaker/index.html', 'horizon-agent-containment/index.html'}
+expected = {'purpose-trace/index.html', 'index.html', 'agent-circuit-breaker/index.html', 'horizon-agent-containment/index.html'}
 actual = {path.relative_to(site).as_posix() for path in site.rglob('*.html')}
 assert actual == expected, ('Unexpected public page routes', actual)
 assert not any(path.suffix in {'.py', '.md', '.toml', '.yml'} for path in site.rglob('*')), 'Source/doc files must remain on GitHub, outside the website artifact'
@@ -50,7 +50,7 @@ for css in site.rglob('*.css'):
 for path in site.rglob('*.json'):
     json.loads(path.read_text(encoding='utf-8'))
 locations = {node.text for node in ET.parse(site / 'sitemap.xml').iter() if node.tag.endswith('loc')}
-assert locations == {'https://sagarchhatrala.github.io/', 'https://sagarchhatrala.github.io/agent-circuit-breaker/', 'https://sagarchhatrala.github.io/horizon-agent-containment/'}
+assert locations == {'https://sagarchhatrala.github.io/purpose-trace/', 'https://sagarchhatrala.github.io/', 'https://sagarchhatrala.github.io/agent-circuit-breaker/', 'https://sagarchhatrala.github.io/horizon-agent-containment/'}
 for name in ('hac', 'hac-demo', 'horizon-agent-containment/presentation', 'horizon-agent-containment/demo-assets', 'horizon-agent-containment/docs', 'agent-circuit-breaker/releases'):
     assert not (site / name).exists(), ('Retired path in build', name)
-print(f'Validated three pages, {count} local references, structured data, fonts, sitemap, and retired-route exclusion.')
+print(f'Validated four pages, {count} local references, structured data, fonts, sitemap, and retired-route exclusion.')
