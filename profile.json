@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
-  "updated": "2026-10-20",
+  "updated": "2026-11-02",
   "name": "Sagar Chhatrala",
   "role": "Staff Security Engineer",
   "organization": "Greenlight",
   "location": "Bengaluru, India",
   "website": "https://sagarchhatrala.github.io/",
-  "summary": "Security engineer, researcher, and open-source builder working across cloud, identity, data, and AI systems. Creator of Agent Circuit Breaker and Horizon Agent Containment.",
+  "summary": "Staff security engineer, researcher, and open-source builder with nearly a decade of experience across cloud, identity, data, and AI systems. Lead cloud and AI security at Greenlight; independently building Agent Circuit Breaker and KECHAA.",
   "contact": {
     "email": "chhatralasagar99@gmail.com",
     "linkedin": "https://www.linkedin.com/in/sagarchhatrala",
@@ -59,8 +59,44 @@
       "CIS Microsoft Azure Foundations Benchmark v2.0.0 co-author"
     ],
     "speaking": [
-      "CrowdStrike Fal.Con: cloud, data, and AI security",
+      "CrowdStrike Fal.Con 2026: two sessions on data-first cloud security and securing AI and mobile access",
+      "CrowdStrike Fal.Con 2025: Removing Greenlight’s Blind Spots, on cloud and data security",
+      "AI Builders Network: conference speaker",
       "Cisco SecCon 2020: DNS over HTTPS and software supply-chain security"
+    ],
+    "speaking_events": [
+      {
+        "event": "CrowdStrike Fal.Con",
+        "year": 2026,
+        "topics": [
+          "Data-first cloud security",
+          "Securing AI and mobile access"
+        ],
+        "url": "https://lnkd.in/p/d_CBmKTd"
+      },
+      {
+        "event": "CrowdStrike Fal.Con",
+        "year": 2025,
+        "session": "Removing Greenlight’s Blind Spots",
+        "topics": [
+          "Cloud security",
+          "Data security"
+        ],
+        "url": "https://lnkd.in/p/dQHVsvSt"
+      },
+      {
+        "event": "AI Builders Network",
+        "role": "Conference speaker",
+        "url": "https://aibuildersnetwork.org/conference/speakers/sagar-chhatrala"
+      },
+      {
+        "event": "Cisco SecCon",
+        "year": 2020,
+        "topics": [
+          "DNS over HTTPS",
+          "Software supply-chain security"
+        ]
+      }
     ]
   },
   "projects": [
@@ -103,6 +139,47 @@
       "scope": "Research prototype around explicitly modeled state and invariants. The project page replays recorded Python engine results. A trusted integration must accurately model effects and honor the decision; unmodeled tool actions remain outside scope.",
       "website": "https://sagarchhatrala.github.io/horizon-agent-containment/",
       "structured_details": "https://sagarchhatrala.github.io/horizon-agent-containment/project.json"
+    },
+    {
+      "name": "Kernel-Enforced Containment for Hijacked AI Agents",
+      "abbreviation": "KECHAA",
+      "status": "Research prototype; experimental Linux backend",
+      "role": "Developer / Researcher",
+      "description": "Authorization-bound agent tool execution with task contracts, single-use signed grants, approval workflows, replay protection, signed audit records, and experimental Linux containment.",
+      "repository": "https://github.com/ruchithamohan/KECHAA-Kernel-Enforced-Containment-for-Hijacked-AI-Agents",
+      "scope": "Experimental Linux backend uses Landlock, seccomp, namespaces, and cgroups to restrict command and descendant effects. Current Linux verification gaps are tracked in the project README."
+    }
+  ],
+  "experience_page": "https://sagarchhatrala.github.io/experience/",
+  "advisory": [
+    {
+      "organization": "Rig Security",
+      "role": "Security Advisor",
+      "start": "2026-03",
+      "end": null,
+      "location": "Remote",
+      "focus": "Human, non-human, and AI-agent identities, identity correlation, access governance, and attack-path visibility"
+    },
+    {
+      "organization": "AirMDR",
+      "role": "Early-Stage Design Partner",
+      "start": "2026-01",
+      "end": null,
+      "location": "Remote",
+      "focus": "AI-powered Managed Detection and Response, security operations, threat detection, investigation, and response workflows"
+    }
+  ],
+  "education": [
+    {
+      "organization": "Gujarat Technological University",
+      "program": "Bachelor of Engineering, Information Technology",
+      "start": "2012",
+      "end": "2016"
+    },
+    {
+      "organization": "Indian Institute of Technology Gandhinagar",
+      "program": "TEQIP-II Long-Term Exchange, Artificial Intelligence",
+      "year": "2014"
     }
   ]
 }

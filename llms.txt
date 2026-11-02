@@ -9,7 +9,16 @@
 - Cisco, April 2020–March 2022. Software Security Engineer. Identity, supply-chain security, and threat modeling.
 - Intel, January 2017–April 2020. System Programmer, Security. Security automation and incident response for distributed infrastructure.
 - Co-author of CIS AWS Foundations Benchmark v1.5.0 and CIS Microsoft Azure Foundations Benchmark v2.0.0.
-- Speaker at CrowdStrike Fal.Con on cloud, data, and AI security, and Cisco SecCon 2020 on DNS over HTTPS and software supply-chain security.
+- Speaker at [CrowdStrike Fal.Con 2026](https://lnkd.in/p/d_CBmKTd): two sessions on data-first cloud security and securing AI and mobile access.
+- Speaker at [CrowdStrike Fal.Con 2025](https://lnkd.in/p/dQHVsvSt): “Removing Greenlight’s Blind Spots,” on cloud and data security.
+- [AI Builders Network conference speaker](https://aibuildersnetwork.org/conference/speakers/sagar-chhatrala).
+- Cisco SecCon 2020 speaker on DNS over HTTPS and software supply-chain security.
+
+## Advisory and product design
+
+- Rig Security, March 2026–present: Security Advisor, remote. Human, non-human, and AI-agent identities, identity correlation, access governance, and attack-path visibility.
+- AirMDR, January 2026–present: Early-Stage Design Partner, remote. Practitioner input on AI-powered MDR, security operations, threat detection, investigation, and response.
+- [The long view: interactive experience](https://sagarchhatrala.github.io/experience/) includes career outcomes, advisory work, research, expertise, education, and contributions.
 
 ## Projects
 
@@ -37,6 +46,12 @@ HAC operates on explicitly modeled state and invariants. The consolidated HAC pr
 - [Project and recorded scenarios](https://sagarchhatrala.github.io/horizon-agent-containment/)
 - [Structured HAC project facts](https://sagarchhatrala.github.io/horizon-agent-containment/project.json)
 
+### KECHAA (Kernel-Enforced Containment for Hijacked AI Agents)
+
+Open-source research prototype for authorization-bound agent tool execution. Sagar contributes as a developer and researcher. Commands are bound to task contracts and single-use signed grants, with approval workflows, replay protection, and signed audit records. Its experimental Linux backend uses Landlock, seccomp, namespaces, and cgroups to restrict command and descendant effects. See the project README for current verification gaps.
+
+- [Source and architecture](https://github.com/ruchithamohan/KECHAA-Kernel-Enforced-Containment-for-Hijacked-AI-Agents)
+
 ## Profile and contact
 
 - [Portfolio](https://sagarchhatrala.github.io/)
@@ -45,4 +60,4 @@ HAC operates on explicitly modeled state and invariants. The consolidated HAC pr
 - [LinkedIn](https://www.linkedin.com/in/sagarchhatrala)
 - Email: chhatralasagar99@gmail.com
 
-Updated: 2026-10-20. This is an author-maintained profile. Project repositories are the source for implementation details and current releases.
+Updated: 2026-11-02. This is an author-maintained profile. Project repositories are the source for implementation details and current releases.
