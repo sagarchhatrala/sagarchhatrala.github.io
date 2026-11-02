@@ -62,9 +62,14 @@
       "CrowdStrike Fal.Con 2026: two sessions on data-first cloud security and securing AI and mobile access",
       "CrowdStrike Fal.Con 2025: Removing Greenlight’s Blind Spots, on cloud and data security",
       "AI Builders Network: conference speaker",
-      "Cisco SecCon 2020: DNS over HTTPS and software supply-chain security"
+      "Cisco SecCon 2020: DNS over HTTPS and software supply-chain security",
+      "OWASP Bangalore: speaker"
     ],
     "speaking_events": [
+      {
+        "event": "OWASP Bangalore",
+        "role": "Speaker"
+      },
       {
         "event": "CrowdStrike Fal.Con",
         "year": 2026,

@@ -4,7 +4,7 @@ import shutil
 
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / '_site'
-ROOT_FILES = ('index.html', 'styles.css', 'app.js', 'llms.txt', 'profile.json', 'robots.txt', 'sitemap.xml')
+ROOT_FILES = ('index.html', 'styles.css', 'home.css', 'app.js', 'llms.txt', 'profile.json', 'robots.txt', 'sitemap.xml')
 PROJECT_FILES = {
     'experience': ('index.html', 'styles.css', 'app.js'),
     'purpose-trace': ('index.html', 'styles.css', 'app.js', 'mark.svg', 'llms.txt', 'project.json', 'evidence.json'),

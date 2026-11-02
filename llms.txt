@@ -13,6 +13,7 @@
 - Speaker at [CrowdStrike Fal.Con 2025](https://lnkd.in/p/dQHVsvSt): “Removing Greenlight’s Blind Spots,” on cloud and data security.
 - [AI Builders Network conference speaker](https://aibuildersnetwork.org/conference/speakers/sagar-chhatrala).
 - Cisco SecCon 2020 speaker on DNS over HTTPS and software supply-chain security.
+- OWASP Bangalore speaker.
 
 ## Advisory and product design
 

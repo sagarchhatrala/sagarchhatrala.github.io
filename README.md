@@ -18,9 +18,11 @@ python scripts/check_site.py
 python -m http.server 8767 --bind 127.0.0.1 --directory _site
 ```
 
-Open http://127.0.0.1:8767/experience/. The build includes only the five page entry points, their assets, and machine-readable information. It excludes repository files and retired page directories.
+Open http://127.0.0.1:8767/ for the homepage or http://127.0.0.1:8767/experience/ for the experience explorer. The build includes only the five page entry points, their assets, and machine-readable information. It excludes repository files and retired page directories.
 
-For a preview without a server, run `python3 scripts/preview_site.py` and open `_preview/experience/index.html` in a browser. This creates a separate local copy with directory links resolved to HTML files. `_preview` is ignored by Git and excluded from publication.
+For a preview without a server, run `python3 scripts/preview_site.py` and open `_preview/index.html` in a browser. This creates a separate local copy with directory links resolved to HTML files. `_preview` is ignored by Git and excluded from publication.
+
+The homepage has an interactive map of engineering, research, and advisory work; ACB and KECHAA project studies; a short personal introduction; a speaking ledger; and a contact panel that prepares a subject in the visitor's email app. All content and direct links remain available without JavaScript. Homepage styling lives in `home.css`, which is loaded only by the homepage. Keep shared `styles.css` and the Experience files unchanged when refining this design.
 
 The experience explorer supports company selection, arrow/Home/End keyboard navigation, direct chapter links such as `/experience/#tenable`, and a “Read all chapters” view. Without JavaScript, every career chapter remains visible. Figures and professional details are based on the author’s resume; the KECHAA description reflects its experimental status.
 
@@ -32,7 +34,7 @@ Retired routes such as `/hac/`, `/hac-demo/`, and `/horizon-agent-containment/pr
 
 ## Content
 
-- `index.html`, `styles.css`, `app.js`: Option 1 portfolio.
+- `index.html`, `home.css`, `app.js`: personal homepage; `styles.css` supplies shared base styles also used by Experience.
 - `experience/`: interactive career explorer and professional background, including Rig Security, AirMDR, ACB, and KECHAA.
 - `agent-circuit-breaker/`: ACB project, interactive policy checks, and approval walkthrough. Evidence recorded from v1.6.9 at `55b9646`.
 - `horizon-agent-containment/`: HAC project and three scenario replays. Evidence recorded from prototype v0.1.0 at `639a641`.

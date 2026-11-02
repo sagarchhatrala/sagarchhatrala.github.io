@@ -37,7 +37,7 @@ def preview():
         markup = re.sub(r'(\bhref=")([^"]+)(")', local_link, page.read_text(encoding='utf-8'))
         page.write_text(markup, encoding='utf-8')
     print('Open this file in your browser:')
-    print(PREVIEW / 'experience' / 'index.html')
+    print(PREVIEW / 'index.html')
 
 
 if __name__ == '__main__':

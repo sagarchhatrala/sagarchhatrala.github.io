@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sagar Chhatrala — Security Engineer &amp; Open-Source Builder</title>
-  <meta name="description" content="Sagar Chhatrala is a Staff Security Engineer at Greenlight, CIS benchmark co-author, and creator of Agent Circuit Breaker and Horizon Agent Containment. Explore his work in cloud, identity, and AI agent security.">
+  <meta name="description" content="Sagar Chhatrala is a Staff Security Engineer at Greenlight, CIS benchmark co-author, and creator of Agent Circuit Breaker and contributor to KECHAA. Explore his work in cloud, identity, and AI agent security.">
   <meta name="theme-color" content="#f5f3ec">
   <link rel="canonical" href="https://sagarchhatrala.github.io/">
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
   <link rel="alternate" type="application/json" href="./profile.json" title="Structured profile">
   <link rel="alternate" type="text/plain" href="./llms.txt" title="Plain-text profile and project guide">
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Sagar Chhatrala — Powerful systems. Clear boundaries.">
+  <meta property="og:title" content="Sagar Chhatrala — Security for what comes next.">
   <meta property="og:description" content="Staff Security Engineer. CIS benchmark co-author. Building open-source security for autonomous AI agents.">
   <meta property="og:url" content="https://sagarchhatrala.github.io/">
   <meta property="og:image" content="https://sagarchhatrala.github.io/assets/social-card.png">
@@ -21,110 +21,176 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" href="./assets/manrope-regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./home.css">
   <script src="./app.js" defer></script>
   <script type="application/ld+json" id="profile-schema">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {"@type":"Person","@id":"https://sagarchhatrala.github.io/#person","name":"Sagar Chhatrala","url":"https://sagarchhatrala.github.io/","image":"https://sagarchhatrala.github.io/assets/portrait.jpg","jobTitle":"Staff Security Engineer","worksFor":{"@type":"Organization","name":"Greenlight"},"homeLocation":{"@type":"Place","name":"Bengaluru, India"},"description":"Security engineer working across cloud, identity, data, and AI systems. CIS AWS and Azure benchmark co-author, conference speaker, and creator of Agent Circuit Breaker and Horizon Agent Containment.","sameAs":["https://github.com/sagarchhatrala","https://www.linkedin.com/in/sagarchhatrala","https://medium.com/@sagarchhatrala"],"knowsAbout":["AI agent security","Cloud security","Identity and access management","MCP security","Kubernetes security","Data security","Security automation"]},
-      {"@type":"WebSite","@id":"https://sagarchhatrala.github.io/#website","url":"https://sagarchhatrala.github.io/","name":"Sagar Chhatrala","inLanguage":"en","author":{"@id":"https://sagarchhatrala.github.io/#person"}},
-      {"@type":"ProfilePage","@id":"https://sagarchhatrala.github.io/#profile","url":"https://sagarchhatrala.github.io/","mainEntity":{"@id":"https://sagarchhatrala.github.io/#person"},"isPartOf":{"@id":"https://sagarchhatrala.github.io/#website"}},
-      {"@type":"SoftwareSourceCode","@id":"https://sagarchhatrala.github.io/#acb","name":"Agent Circuit Breaker","description":"Beta Python package for deterministic action and trajectory checks, plus a stateful runtime gate for trusted single-host integrations.","url":"https://sagarchhatrala.github.io/agent-circuit-breaker/","codeRepository":"https://github.com/sagarchhatrala/agent-circuit-breaker","programmingLanguage":"Python","creator":{"@id":"https://sagarchhatrala.github.io/#person"}},
-      {"@type":"SoftwareSourceCode","@id":"https://sagarchhatrala.github.io/#hac","name":"Horizon Agent Containment","description":"Research prototype that models agent state, provenance, authority, and emergent capabilities to evaluate security invariants.","url":"https://sagarchhatrala.github.io/horizon-agent-containment/","codeRepository":"https://github.com/sagarchhatrala/horizon-agent-containment","programmingLanguage":"Python","creator":{"@id":"https://sagarchhatrala.github.io/#person"}}
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://sagarchhatrala.github.io/#person",
+      "name": "Sagar Chhatrala",
+      "url": "https://sagarchhatrala.github.io/",
+      "image": "https://sagarchhatrala.github.io/assets/portrait.jpg",
+      "jobTitle": "Staff Security Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Greenlight"
+      },
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Bengaluru, India"
+      },
+      "description": "Security engineer working across cloud, identity, data, and AI systems. CIS AWS and Azure benchmark co-author, conference speaker, and creator of Agent Circuit Breaker and contributor to KECHAA.",
+      "sameAs": [
+        "https://github.com/sagarchhatrala",
+        "https://www.linkedin.com/in/sagarchhatrala",
+        "https://medium.com/@sagarchhatrala"
+      ],
+      "knowsAbout": [
+        "AI agent security",
+        "Cloud security",
+        "Identity and access management",
+        "MCP security",
+        "Kubernetes security",
+        "Data security",
+        "Security automation"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sagarchhatrala.github.io/#website",
+      "url": "https://sagarchhatrala.github.io/",
+      "name": "Sagar Chhatrala",
+      "inLanguage": "en",
+      "author": {
+        "@id": "https://sagarchhatrala.github.io/#person"
+      }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://sagarchhatrala.github.io/#profile",
+      "url": "https://sagarchhatrala.github.io/",
+      "mainEntity": {
+        "@id": "https://sagarchhatrala.github.io/#person"
+      },
+      "isPartOf": {
+        "@id": "https://sagarchhatrala.github.io/#website"
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://sagarchhatrala.github.io/#acb",
+      "name": "Agent Circuit Breaker",
+      "description": "Beta Python package for deterministic action and trajectory checks, plus a stateful runtime gate for trusted single-host integrations.",
+      "url": "https://sagarchhatrala.github.io/agent-circuit-breaker/",
+      "codeRepository": "https://github.com/sagarchhatrala/agent-circuit-breaker",
+      "programmingLanguage": "Python",
+      "creator": {
+        "@id": "https://sagarchhatrala.github.io/#person"
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://sagarchhatrala.github.io/#hac",
+      "name": "Horizon Agent Containment",
+      "description": "Research prototype that models agent state, provenance, authority, and emergent capabilities to evaluate security invariants.",
+      "url": "https://sagarchhatrala.github.io/horizon-agent-containment/",
+      "codeRepository": "https://github.com/sagarchhatrala/horizon-agent-containment",
+      "programmingLanguage": "Python",
+      "creator": {
+        "@id": "https://sagarchhatrala.github.io/#person"
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://sagarchhatrala.github.io/#kechaa",
+      "name": "KECHAA — Kernel-Enforced Containment for Hijacked AI Agents",
+      "description": "Research prototype for authorization-bound agent tool execution, with an experimental Linux containment backend.",
+      "codeRepository": "https://github.com/ruchithamohan/KECHAA-Kernel-Enforced-Containment-for-Hijacked-AI-Agents",
+      "contributor": {
+        "@id": "https://sagarchhatrala.github.io/#person"
+      }
+    }
+  ]
+}
   </script>
 </head>
-<body>
+<body class="home-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <nav class="nav shell" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="Sagar Chhatrala, home"><span class="monogram" aria-hidden="true">sc<span>.</span></span><span class="brand-name">Sagar Chhatrala</span></a>
-      <div class="nav-links"><a href="#projects">Work</a><a href="./experience/">Experience</a><a href="#about">About</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></div>
+      <a class="brand" href="#top" aria-label="Sagar Chhatrala, home"><span class="monogram" aria-hidden="true">sc<span>.</span></span><span class="brand-name">Sagar Chhatrala<span>Security engineer &amp; researcher</span></span></a>
+      <div class="nav-links"><a href="#top">Start here</a><a href="./experience/">Experience</a><a href="#about">About</a><a href="#contact">Let’s talk <span aria-hidden="true">↗</span></a></div>
     </nav>
   </header>
   <main id="main" tabindex="-1">
-    <section class="hero shell" id="top" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <div class="identity"><img src="./assets/portrait.jpg" width="56" height="56" alt="Sagar Chhatrala"><div><p class="identity-name">Sagar Chhatrala</p><p class="identity-role">Security engineer. Researcher. Builder.</p></div></div>
-        <h1 id="hero-title">Powerful systems.<br><em>Clear boundaries.</em></h1>
-        <p class="hero-lede">I’m a Staff Security Engineer at <strong>Greenlight</strong>. I secure cloud, identity, and AI systems—and build open-source tools that put boundaries around autonomous agents.</p>
-        <div class="hero-actions"><a class="button primary" href="#projects">Explore my work <span aria-hidden="true">↘</span></a><a class="text-link" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a></div>
-        <div class="credentials"><a href="#contributions">CIS benchmark co-author</a><span aria-hidden="true">/</span><a href="#contributions">Fal.Con speaker</a></div>
+    <section class="opening shell" id="top" aria-labelledby="hero-title">
+      <div class="opening-copy">
+        <p class="folio"><span class="live-dot" aria-hidden="true"></span> ENGINEERING · RESEARCH · ADVISORY</p>
+        <h1 id="hero-title">Security for<br> what comes<br> <em>next.</em><span class="title-star" aria-hidden="true">✳</span></h1>
+        <p class="opening-lede">I’m Sagar. I secure cloud and AI systems at <a href="./experience/#greenlight" class="greenlight-link">Greenlight</a>, build open-source tools, and help founders turn hard security problems into useful products.</p>
+        <div class="opening-actions"><a class="round-link" href="#projects"><span class="arrow-disc" aria-hidden="true">↘</span> Step into my work</a><a class="quiet-link" href="./experience/">The story so far <span aria-hidden="true">↗</span></a></div>
       </div>
-      <section class="example" aria-labelledby="example-title">
-        <div class="example-top"><span class="mono">A CONTROL IN ACTION</span><span class="example-index" aria-hidden="true">01 — 03</span></div>
-        <h2 id="example-title">An agent is about to act.</h2>
-        <p class="example-intro">Give it a boundary before it does.</p>
-        <div class="example-options" role="group" aria-label="Choose a documented ACB example" hidden>
-          <button type="button" data-example="push" aria-pressed="true">Force push</button><button type="button" data-example="delete" aria-pressed="false">System delete</button><button type="button" data-example="unknown" aria-pressed="false">Unknown</button>
+      <div class="practice-map" data-perspective="engineering">
+        <div class="map-heading"><span class="folio">A MAP OF MY PRACTICE</span><span class="map-coordinates" aria-hidden="true">01 / 03</span></div>
+        <div class="map-canvas">
+          <svg class="map-lines" viewBox="0 0 440 360" aria-hidden="true">
+            <defs><pattern id="map-grid" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="currentColor" stroke="none"/></pattern></defs>
+            <rect width="440" height="360" fill="url(#map-grid)" stroke="none" opacity=".27"/>
+            <path class="map-axis" d="M220 10V348M12 180H428"/>
+            <circle class="map-orbit orbit-engineering" cx="220" cy="144" r="119"/>
+            <circle class="map-orbit orbit-research" cx="172" cy="224" r="119"/>
+            <circle class="map-orbit orbit-advisory" cx="268" cy="224" r="119"/>
+            <path class="map-ticks" d="M12 12h14M19 5v14M414 12h14M421 5v14M12 348h14M19 341v14M414 348h14M421 341v14"/>
+          </svg>
+          <div class="map-center" aria-hidden="true"><span>BETTER</span><em>boundaries.</em><span>GREATER POSSIBILITIES</span></div>
+          <div class="map-controls" role="group" aria-label="Explore the three sides of my work" hidden>
+            <button class="map-node node-engineering" type="button" data-perspective="engineering" aria-pressed="true" aria-controls="perspective-note"><span class="node-marker" aria-hidden="true">01</span><span>Engineer<span class="node-action">Explore <span aria-hidden="true">↗</span></span></span></button>
+            <button class="map-node node-research" type="button" data-perspective="research" aria-pressed="false" aria-controls="perspective-note"><span class="node-marker" aria-hidden="true">02</span><span>Researcher<span class="node-action">Explore <span aria-hidden="true">↗</span></span></span></button>
+            <button class="map-node node-advisory" type="button" data-perspective="advisory" aria-pressed="false" aria-controls="perspective-note"><span class="node-marker" aria-hidden="true">03</span><span>Advisor<span class="node-action">Explore <span aria-hidden="true">↗</span></span></span></button>
+          </div>
+          <noscript><div class="map-static-labels"><span>Engineer</span><span>Researcher</span><span>Advisor</span></div></noscript>
         </div>
-        <div id="example-result" aria-live="polite" aria-atomic="true">
-          <div class="command"><span class="mono command-label">PROPOSED COMMAND</span><code id="example-command">git push --force origin main</code></div>
-          <div class="gate-flow" aria-hidden="true"><span>Agent</span><i></i><span class="gate">ACB policy</span><i></i><span class="gate-stop">Ⅱ</span></div>
-          <div class="verdict-row"><span id="example-verdict" class="verdict">BLOCK</span><span id="example-caption">Decision: do not execute</span></div>
-          <p class="example-reason" id="example-reason">A force push can overwrite shared history. ACB flags this destructive command shape.</p>
+        <div class="perspective-note" id="perspective-note" aria-live="polite" aria-atomic="true"><p class="folio" id="perspective-label">01 / BUILD &amp; OPERATE</p><p id="perspective-copy">Cloud, identity, data, and AI security. Built around the realities of the teams using it.</p><a id="perspective-link" href="./experience/#greenlight">Inside my engineering work <span aria-hidden="true">↗</span></a></div>
+        <p class="map-invitation" hidden><span aria-hidden="true">↑</span> Three perspectives. Choose one to explore.</p>
+      </div>
+    </section>
+
+    <div class="margin-note shell"><span class="folio">THE THROUGH LINE</span><p>Powerful systems deserve <em>thoughtful boundaries.</em></p><a href="#projects" aria-label="Continue to selected work"><span aria-hidden="true">↓</span></a></div>
+
+    <section class="work-section shell" id="projects" aria-labelledby="projects-title">
+      <div class="section-intro"><div><p class="folio"><span>01 /</span> THE WORKBENCH</p><h2 id="projects-title">Questions worth asking.<br> <em>Tools worth building.</em></h2></div><p>Open-source tools and research exploring what autonomous agents should be allowed to do.</p></div>
+      <article class="work-entry" id="acb" aria-labelledby="acb-title">
+        <div class="work-copy"><div class="work-meta"><span class="work-number">01</span><span class="folio">AGENT SECURITY</span><span class="work-status">Python package · Beta</span></div><h3 id="acb-title">Agent Circuit<br> Breaker<span class="project-shortname">ACB</span></h3><p class="work-question">Before an agent acts,<br> ask whether it should.</p><p class="work-description">A checkpoint between an AI agent’s proposed action and its execution. Deterministic checks help trusted integrations identify risky commands, require approval, and keep a record of what happened.</p><div class="work-byline"><span class="small-dot" aria-hidden="true"></span> Creator &amp; maintainer</div><div class="work-actions"><a class="ink-link" href="./agent-circuit-breaker/">Explore the project <span aria-hidden="true">↗</span></a><a class="quiet-link" href="https://github.com/sagarchhatrala/agent-circuit-breaker">Source code <span aria-hidden="true">↗</span></a></div><a class="listing-note" href="https://faun.dev/toolbox/agent-circuit-breaker/">Listed on FAUN.toolbox <span aria-hidden="true">↗</span></a></div>
+        <div class="action-study">
+          <div class="study-heading"><span class="folio">AT THE DECISION BOUNDARY</span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 16h7m12 0h7M10 16l12-8"/><circle cx="10" cy="16" r="2"/><circle cx="22" cy="16" r="2"/></svg></div>
+          <p class="study-prompt">What happens when an agent tries this?</p>
+          <div class="example-options study-options" role="group" aria-label="Choose a documented ACB example" hidden><button type="button" data-example="push" aria-pressed="true">Force push</button><button type="button" data-example="delete" aria-pressed="false">System delete</button><button type="button" data-example="unknown" aria-pressed="false">Unknown action</button></div>
+          <div id="example-result" class="study-result" aria-live="polite" aria-atomic="true"><span class="folio command-heading">PROPOSED COMMAND</span><code id="example-command">git push --force origin main</code><div class="decision-line" aria-hidden="true"><span>Agent</span><i></i><span class="policy-stamp">ACB</span><i></i><span>Decision</span></div><div class="study-verdict"><span id="example-verdict">BLOCK</span><span id="example-symbol" aria-hidden="true">↛</span></div><p class="verdict-caption" id="example-caption">Decision: do not execute</p><p id="example-reason">A force push can overwrite shared history. ACB flags this destructive command shape.</p></div>
+          <div class="study-foot"><span>Documented examples. No commands run.</span><a href="./agent-circuit-breaker/#start">Try it yourself <span aria-hidden="true">↗</span></a></div>
         </div>
-        <div class="example-foot"><p>Documented example. Nothing executes here.</p><a href="https://github.com/sagarchhatrala/agent-circuit-breaker#agent-circuit-breaker" aria-label="Read the Agent Circuit Breaker example source">View source ↗</a></div>
-      </section>
+      </article>
+
+      <article class="work-entry kechaa-entry" id="kechaa" aria-labelledby="kechaa-title">
+        <div class="work-copy"><div class="work-meta"><span class="work-number">02</span><span class="folio">AGENT CONTAINMENT</span><span class="work-status research-status">Research prototype</span></div><h3 id="kechaa-title">KECHAA<span class="project-expansion">Kernel-Enforced Containment<br> for Hijacked AI Agents</span></h3><p class="work-question">What if the agent<br> stops following the plan?</p><p class="work-description">Research into keeping agent tools within an approved task, even when instructions are hijacked. Signed permissions and an experimental Linux backend explore how to enforce those limits beyond the prompt.</p><div class="work-byline"><span class="small-dot" aria-hidden="true"></span> Developer / researcher</div><div class="work-actions"><a class="ink-link" href="https://github.com/ruchithamohan/KECHAA-Kernel-Enforced-Containment-for-Hijacked-AI-Agents">Explore the research <span aria-hidden="true">↗</span></a></div></div>
+        <div class="containment-study"><div class="study-heading"><span class="folio">PERMISSION HAS A PERIMETER</span><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="5" width="22" height="22" rx="2"/><path d="M11 16h10m-5-5v10"/></svg></div><div class="containment-drawing" role="img" aria-label="Conceptual illustration: an approved task contains the agent and permitted tool action. An attempted action beyond that scope meets a containment boundary."><span class="outside-label folio">BEYOND THE TASK</span><div class="task-perimeter"><span class="perimeter-caption folio">THE APPROVED TASK</span><div class="agent-token"><span aria-hidden="true">✳</span><span>AI agent</span></div><div class="permitted-path" aria-hidden="true"></div><span class="permitted-action">Permitted action <span aria-hidden="true">↗</span></span><div class="escape-path" aria-hidden="true"><span></span><b>×</b><i></i></div></div><div class="boundary-caption"><span aria-hidden="true">↑</span><p>A boundary the prompt<br> doesn’t get to rewrite.</p></div></div><div class="study-foot"><span>Conceptual illustration</span><span>Experimental Linux backend</span></div></div>
+      </article>
+      <a class="research-shelf" id="hac" href="./horizon-agent-containment/"><span class="folio">ANOTHER LINE OF INQUIRY</span><span><strong>Horizon Agent Containment</strong><span>How does risk build across a sequence of agent actions?</span></span><span class="shelf-arrow" aria-hidden="true">↗</span></a>
     </section>
 
-    <div class="experience-strip shell" role="group" aria-label="Engineering experience"><span class="mono">BUILT ON EXPERIENCE AT</span><div><span>Intel</span><span>Cisco</span><span>Tenable</span><span>Greenlight<span class="current-dot" aria-hidden="true"></span><span class="sr-only"> (current employer)</span></span></div></div>
+    <section class="personal-section" id="about" aria-labelledby="about-title"><div class="shell">
+      <div class="personal-top"><p class="folio"><span>02 /</span> THE PERSON BEHIND THE WORK</p><span class="folio location-label"><span class="small-dot" aria-hidden="true"></span> BENGALURU, INDIA</span></div>
+      <div class="personal-grid"><div class="portrait-note"><div class="portrait-frame"><img src="./assets/portrait.jpg" width="256" height="256" loading="lazy" alt="Sagar Chhatrala"><span class="portrait-cross" aria-hidden="true">+</span></div><p class="portrait-name">Sagar Chhatrala<span>Engineer. Researcher. Always building.</span></p><span class="hand-note" aria-hidden="true">A little curiosity goes a long way. ↗</span></div><div class="personal-copy"><h2 id="about-title">A builder’s instinct.<br> <em>A researcher’s curiosity.</em></h2><p class="personal-lede">I care about the moment an idea becomes something a team can actually use.</p><p>At Greenlight, I lead cloud and AI security, helping protect financial infrastructure and data serving millions of families. My independent work follows the same question into AI agents: how do we give powerful systems useful limits?</p><p>I also advise <strong>Rig Security</strong> on identity security and partner with <strong>AirMDR</strong> on product design, bringing the perspective of someone who builds and operates these systems.</p></div></div>
+      <div class="working-principles" aria-label="How I approach the work"><div><span class="folio">01 / STAY CLOSE</span><h3>Start with the real problem.</h3><p>Build around the people who will use the system and the decisions they need to make.</p></div><div><span class="folio">02 / MAKE IT EXPLICIT</span><h3>Give trust a boundary.</h3><p>Be clear about what a system can do, where permission ends, and what remains uncertain.</p></div><div><span class="folio">03 / KEEP IT OPEN</span><h3>Share what you learn.</h3><p>Turn practice into code, research, standards, and conversations others can build on.</p></div></div>
+      <a class="experience-door" href="./experience/"><span class="folio">THE LONG VIEW</span><span class="door-title">The work behind<br> <em>the perspective.</em></span><span class="door-action">Explore my experience <span class="arrow-disc" aria-hidden="true">↗</span></span></a>
+    </div></section>
 
-    <section class="section projects shell" id="projects" aria-labelledby="projects-title">
-      <div class="section-heading"><div><p class="eyebrow"><span>01 /</span> SELECTED WORK</p><h2 id="projects-title">Ideas are good.<br><em>Working code is better.</em></h2></div><p>Two open-source projects. Two questions about what an AI agent should be allowed to do.</p></div>
-      <div class="project-grid">
-        <article class="project-card" id="acb">
-          <div class="project-top"><span class="project-symbol" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M3 16h7m12 0h7M10 16l12-8"/><circle cx="10" cy="16" r="2"/><circle cx="22" cy="16" r="2"/></svg></span><span class="status">Python package · v1.6.9 Beta</span><span class="project-number mono">01</span></div>
-          <h3>Agent Circuit Breaker<span class="project-abbr">ACB</span></h3>
-          <p class="project-question">“Should this agent action execute?”</p>
-          <p class="project-description">Deterministic checks for commands, files, SQL, and MCP tools. A stateful runtime gate adds exact approvals and durable execution records for trusted agent integrations.</p>
-          <div class="project-visual acb-visual" role="img" aria-label="An action is inspected by policy before a decision"><span>Proposed action</span><span class="diagram-arrow" aria-hidden="true">→</span><strong>Policy check</strong><span class="diagram-arrow" aria-hidden="true">→</span><span class="diagram-decision">Decision</span></div>
-          <ul class="project-features"><li>Deterministic checks; no model call required</li><li>CLI, Python API, MCP proxy, and trusted runtime</li><li>Single-use approvals and durable local run state</li></ul>
-          <div class="project-links"><a class="button dark" href="./agent-circuit-breaker/">Explore ACB <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/sagarchhatrala/agent-circuit-breaker">Source code <span aria-hidden="true">↗</span></a></div>
-          <div class="install"><code>pip install agent-circuit-breaker</code><button type="button" id="copy-install" aria-label="Copy Agent Circuit Breaker install command" hidden>Copy</button></div>
-          <span class="sr-only" id="copy-status" role="status"></span>
-          <a class="directory-mention" href="https://faun.dev/toolbox/agent-circuit-breaker/" aria-label="Listed on FAUN.toolbox — view ACB’s profile and scorecard"><span>Listed on <strong>FAUN.toolbox</strong></span><span aria-hidden="true">↗</span></a>
-        </article>
-        <article class="project-card hac-card" id="hac">
-          <div class="project-top"><span class="project-symbol" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="m8 8 16 5-10 12L8 8"/><circle cx="8" cy="8" r="3"/><circle cx="24" cy="13" r="3"/><circle cx="14" cy="25" r="3"/></svg></span><span class="status research">Research prototype</span><span class="project-number mono">02</span></div>
-          <h3>Horizon Agent Containment<span class="project-abbr">HAC</span></h3>
-          <p class="project-question">“What can this agent become capable of?”</p>
-          <p class="project-description">A stateful containment engine for long-running agents. Track data lineage, authority, and relationships to detect forbidden capabilities as they emerge.</p>
-          <div class="project-visual hac-visual" role="img" aria-label="Secret-derived data retains its provenance, so external upload is blocked"><span>Secret</span><span class="diagram-arrow" aria-hidden="true">→</span><strong>Transformed data</strong><span class="diagram-arrow" aria-hidden="true">→</span><span class="diagram-decision">Upload blocked</span></div>
-          <ul class="project-features"><li>Provenance survives transformation and encryption</li><li>Explicit delegation and security invariants</li><li>Working Python engine with documented scenarios</li></ul>
-          <div class="project-links"><a class="button dark" href="./horizon-agent-containment/">Explore HAC <span aria-hidden="true">→</span></a><a class="text-link" href="https://github.com/sagarchhatrala/horizon-agent-containment">Source code <span aria-hidden="true">↗</span></a></div>
-          <div class="research-note"><span class="small-dot" aria-hidden="true"></span>Exploring the layer beyond individual action checks.</div>
-        </article>
-      </div>
-      <div class="project-guide"><span class="mono">WHERE TO START</span><p>Building an agent integration? <a href="./agent-circuit-breaker/#start">Try ACB’s quickstart →</a><br>Exploring long-horizon risk? <a href="./horizon-agent-containment/#scenario">Explore HAC scenarios →</a></p></div>
-    </section>
+    <section class="conversations shell" id="contributions" aria-labelledby="contributions-title"><div class="conversations-intro"><p class="folio"><span>03 /</span> OUT IN THE OPEN</p><h2 id="contributions-title">From the workbench<br> <em>to the wider room.</em></h2><p>Sharing practical perspectives on cloud, data, identity, and AI security.</p><div class="standards-note"><span class="standards-mark" aria-hidden="true">↳</span><div><p class="folio">PUTTING PRACTICE INTO STANDARDS</p><a href="https://www.cisecurity.org/cis-benchmarks">CIS benchmark co-author <span aria-hidden="true">↗</span></a><p>AWS Foundations v1.5.0<br> Microsoft Azure Foundations v2.0.0</p></div></div></div><div class="speaking-ledger"><a href="https://lnkd.in/p/d_CBmKTd"><span class="talk-year">2026</span><span class="talk-name">CrowdStrike Fal.Con<span>Cloud, data &amp; AI security</span></span><span class="talk-arrow" aria-hidden="true">↗</span></a><a href="https://lnkd.in/p/dQHVsvSt"><span class="talk-year">2025</span><span class="talk-name">CrowdStrike Fal.Con<span>Removing Greenlight’s Blind Spots</span></span><span class="talk-arrow" aria-hidden="true">↗</span></a><a href="https://aibuildersnetwork.org/conference/speakers/sagar-chhatrala"><span class="talk-year">SPEAKER</span><span class="talk-name">AI Builders Network<span>Conference speaker</span></span><span class="talk-arrow" aria-hidden="true">↗</span></a><p class="other-rooms">Also at Cisco SecCon &amp; OWASP Bangalore.</p><a class="ledger-more" href="./experience/#speaking">The full speaking story <span aria-hidden="true">↗</span></a></div></section>
 
-    <section class="about-section" id="about" aria-labelledby="about-title">
-      <div class="shell about-grid">
-        <div class="about-copy"><p class="eyebrow"><span>02 /</span> THE ENGINEER BEHIND THE TOOLS</p><h2 id="about-title">Across the stack.<br><em>At the boundaries.</em></h2><p>I’ve worked from high-compute infrastructure to product security, cloud research, and financial systems. The recurring question: where does a powerful system need a better boundary?</p><p>At Greenlight, I lead cloud and AI security work across infrastructure, identity, data access, and automation. My independent projects take that same engineering mindset into autonomous agents.</p><div class="about-location"><span class="small-dot" aria-hidden="true"></span>Based in Bengaluru, India</div><a class="career-story-link" href="./experience/"><span><span class="mono">THE LONG VIEW</span>Explore the work behind the experience</span><span aria-hidden="true">↗</span></a></div>
-        <ol class="career" aria-label="Selected career history, most recent first">
-          <li><div class="career-meta"><span class="mono">2023 — PRESENT</span><span class="current-tag">NOW</span></div><h3>Greenlight</h3><p class="career-role">Staff Security Engineer <span>· since 2025</span></p><p>Cloud and AI security, secure infrastructure patterns, data access, and security automation.</p></li>
-          <li><div class="career-meta"><span class="mono">2022 — 2023</span></div><h3>Tenable</h3><p class="career-role">Senior Cloud Security Research Engineer</p><p>Turned cloud threat research into detections, attack-path analysis, and security guidance.</p></li>
-          <li><div class="career-meta"><span class="mono">2020 — 2022</span></div><h3>Cisco</h3><p class="career-role">Software Security Engineer</p><p>Cloud-native identity, supply-chain security, threat modeling, and reusable engineering tools.</p></li>
-          <li><div class="career-meta"><span class="mono">2017 — 2020</span></div><h3>Intel</h3><p class="career-role">System Programmer, Security</p><p>Security automation, vulnerability remediation, and incident response for distributed infrastructure.</p></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="section contributions shell" id="contributions" aria-labelledby="contributions-title">
-      <div class="section-heading"><div><p class="eyebrow"><span>03 /</span> BEYOND THE CODE</p><h2 id="contributions-title">Contribute the knowledge.<br><em>Raise the baseline.</em></h2></div></div>
-      <div class="contribution-grid">
-        <article><span class="contribution-label mono">STANDARDS</span><h3>CIS benchmark co-author</h3><p>Contributed to the AWS Foundations v1.5.0 and Microsoft Azure Foundations v2.0.0 benchmarks, translating cloud security practice into actionable guidance.</p><a class="text-link" href="https://www.cisecurity.org/cis-benchmarks">About CIS Benchmarks <span aria-hidden="true">↗</span></a></article>
-        <article><span class="contribution-label mono">TALKS</span><h3>From practice to the stage</h3><p class="speaking-summary">Speaker at CrowdStrike Fal.Con in <a href="https://lnkd.in/p/dQHVsvSt" aria-label="CrowdStrike Fal.Con 2025 recap">2025 ↗</a> and <a href="https://lnkd.in/p/d_CBmKTd" aria-label="CrowdStrike Fal.Con 2026 recap">2026 ↗</a>, <a href="https://aibuildersnetwork.org/conference/speakers/sagar-chhatrala">AI Builders Network ↗</a>, and Cisco SecCon 2020. Sharing practical perspectives on cloud, data, AI, and software supply-chain security.</p><a class="text-link" href="./experience/#speaking">Explore my talks <span aria-hidden="true">↗</span></a></article>
-        <article><span class="contribution-label mono">EXPERTISE</span><h3>Connected security thinking</h3><p>Cloud and Kubernetes. Identity and least privilege. Data access. Application security. Agent tools and runtime controls. The interesting problems connect them.</p><a class="text-link" href="https://www.linkedin.com/in/sagarchhatrala">Full professional profile <span aria-hidden="true">↗</span></a></article>
-      </div>
-    </section>
-
-    <section class="contact-section" id="contact" aria-labelledby="contact-title">
-      <div class="shell contact-grid"><div><p class="eyebrow"><span>04 /</span> START A CONVERSATION</p><h2 id="contact-title">Working on something<br><em>worth securing?</em></h2><p>Engineering challenges, research collaborations, or a good question about agent security. I’d like to hear it.</p></div><div class="contact-actions"><a class="button light" href="mailto:chhatralasagar99@gmail.com">Let’s talk over email <span aria-hidden="true">↗</span></a><a class="contact-email" href="mailto:chhatralasagar99@gmail.com">chhatralasagar99@gmail.com</a><div class="social-links"><a href="https://www.linkedin.com/in/sagarchhatrala">LinkedIn ↗</a><a href="https://github.com/sagarchhatrala">GitHub ↗</a></div></div></div>
-    </section>
+    <section class="hello-section" id="contact" aria-labelledby="contact-title"><div class="shell"><div class="hello-top"><p class="folio"><span>04 /</span> AN OPEN INVITATION</p><span class="hello-asterisk" aria-hidden="true">✳</span></div><div class="hello-grid"><div class="hello-copy"><h2 id="contact-title">Have a hard<br> problem?<br> <em>I’m listening.</em></h2><p>A product taking shape. A room full of curious people. A question about where AI security goes next. Let’s compare notes.</p><div class="hello-socials"><a href="https://www.linkedin.com/in/sagarchhatrala">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/sagarchhatrala">GitHub <span aria-hidden="true">↗</span></a></div></div><div class="correspondence"><div class="correspondence-heading"><span class="folio">TO: SAGAR</span><span class="postage" aria-hidden="true"><svg viewBox="0 0 40 32"><path d="M3 5h34v23H3zM3 5l17 13L37 5M3 28l12-13m22 13L25 15"/></svg></span></div><h3>What brings you here?</h3><div class="conversation-options" role="group" aria-label="Choose a conversation topic" hidden><button type="button" data-topic="product" aria-pressed="false">Building a product <span aria-hidden="true">↗</span></button><button type="button" data-topic="speaking" aria-pressed="false">Planning a talk <span aria-hidden="true">↗</span></button><button type="button" data-topic="research" aria-pressed="false">Exploring research <span aria-hidden="true">↗</span></button><button type="button" data-topic="hello" aria-pressed="true">Just saying hello <span aria-hidden="true">↗</span></button></div><div class="email-draft" aria-live="polite" aria-atomic="true"><span class="folio">SUBJECT</span><p id="email-subject">Let’s compare notes</p><p id="email-prompt">Good conversations often start with a simple hello.</p></div><a class="draft-link" id="draft-email" href="mailto:chhatralasagar99@gmail.com?subject=Let%E2%80%99s%20compare%20notes">Draft an email <span aria-hidden="true">↗</span></a><p class="email-hint">Opens your email app, ready for your words.</p></div></div><div class="direct-contact"><span class="folio">OR, STRAIGHT TO THE SOURCE</span><a href="mailto:chhatralasagar99@gmail.com" id="email-address">chhatralasagar99@gmail.com</a><button type="button" id="copy-email" hidden>Copy email <span aria-hidden="true">↗</span></button><span class="sr-only" id="email-copy-status" role="status"></span></div></div></section>
   </main>
-  <footer class="footer shell"><a class="footer-name" href="#top">Sagar Chhatrala<span>Security, with intent.</span></a><div><a href="./llms.txt">Plain-text overview</a><a href="./profile.json">Profile JSON</a><a href="#top">Back to top ↑</a></div></footer>
+  <footer class="home-footer shell"><a class="footer-signature" href="#top">sc<span>.</span><span>Sagar Chhatrala<br> <span>Security, with intent.</span></span></a><div><a href="./llms.txt">Plain-text overview</a><a href="./profile.json">Profile JSON</a><a href="#top">Back to top <span aria-hidden="true">↑</span></a></div></footer>
 </body>
 </html>
