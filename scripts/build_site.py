@@ -8,7 +8,7 @@ ROOT_FILES = ('index.html', 'styles.css', 'home.css', 'app.js', 'llms.txt', 'pro
 PROJECT_FILES = {
     'experience': ('index.html', 'styles.css', 'app.js'),
     'purpose-trace': ('index.html', 'styles.css', 'app.js', 'mark.svg', 'llms.txt', 'project.json', 'evidence.json'),
-    'agent-circuit-breaker': ('index.html', 'styles.css', 'app.js', 'mark.svg', 'llms.txt', 'project.json', 'evidence.json'),
+    'agent-circuit-breaker': ('index.html', 'styles.css', 'release.css', 'app.js', 'mark.svg', 'llms.txt', 'project.json', 'evidence.json', 'assets/acb-demo.png', 'assets/acb-overview.mp4', 'assets/acb-overview.vtt'),
     'horizon-agent-containment': ('index.html', 'styles.css', 'app.js', 'mark.svg', 'llms.txt', 'project.json', 'evidence.json'),
 }
 

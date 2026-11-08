@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.440 --> 00:00:15.463
+An explicit contract permits reading synthetic logs and writing a report. The file below is created by the executor.
+
+00:00:15.693 --> 00:00:45.712
+Offline proposal replay: a poisoned handoff requests an export. The baseline sends synthetic data; ACB denies the identical destination and starts no publisher.
+
+00:00:45.901 --> 00:01:00.932
+A publication pauses for owner approval. Substitution is rejected. Exact execution succeeds once. Replay fails after reconstructing the runtime from disk.
+
+00:01:01.090 --> 00:01:16.111
+The collector receives data, then the adapter loses the response. ACB records an uncertain outcome. A restarted runtime cannot silently retry.

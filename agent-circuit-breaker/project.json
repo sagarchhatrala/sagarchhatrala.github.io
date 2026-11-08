@@ -2,34 +2,113 @@
   "schema_version": "1.0",
   "name": "Agent Circuit Breaker",
   "abbreviation": "ACB",
-  "author": {"name": "Sagar Chhatrala", "url": "https://sagarchhatrala.github.io/"},
-  "version": "1.6.9",
+  "author": {
+    "name": "Sagar Chhatrala",
+    "url": "https://sagarchhatrala.github.io/"
+  },
+  "version": "1.7.0",
   "status": "Beta",
-  "reviewed_on": "2026-10-20",
-  "source_commit": "55b9646ea78384dd2a3c57bf1ff7b67048d75b16",
+  "reviewed_on": "2026-11-08",
+  "source_commit": "d6dd54531652853db5b34b24938fb6d3f1b70dc3",
   "repository": "https://github.com/sagarchhatrala/agent-circuit-breaker",
   "directory_listings": [
-    {"name": "FAUN.toolbox", "url": "https://faun.dev/toolbox/agent-circuit-breaker/", "description": "Developer-tool directory listing with a dedicated profile and scorecard."}
+    {
+      "name": "FAUN.toolbox",
+      "url": "https://faun.dev/toolbox/agent-circuit-breaker/",
+      "description": "Developer-tool directory listing with a dedicated profile and scorecard."
+    }
   ],
   "license": "MIT",
   "language": "Python",
   "requires_python": ">=3.11",
   "default_runtime_dependencies": [],
-  "install": "python -m pip install agent-circuit-breaker==1.6.9",
-  "summary": "Local deterministic action and trajectory checks, plus a stateful runtime gate for trusted, single-host agent integrations.",
-  "decisions": ["ALLOW", "BLOCK", "UNKNOWN", "PENDING_APPROVAL", "ERROR"],
+  "install": "python -m pip install agent-circuit-breaker==1.7.0",
+  "summary": "Explicit permissions before AI agent execution, with typed local tools, durable MCP workflows, exact single-use approvals, and a runnable offline demo.",
+  "decisions": [
+    "ALLOW",
+    "BLOCK",
+    "UNKNOWN",
+    "PENDING_APPROVAL",
+    "ERROR"
+  ],
   "capabilities": [
-    {"name": "Action evaluation", "scope": "Known patterns in proposed shell commands, filesystem operations, and SQL. Unclassified actions remain UNKNOWN."},
-    {"name": "Trajectory evaluation", "scope": "Configured run contracts, actor/delegation constraints, supported secret-read-to-egress patterns, blocked retries, and output boundaries."},
-    {"name": "Principal and capability checks", "scope": "Trusted integration supplies private tokens and bound identity. Capabilities scope actions and target resources when configured."},
-    {"name": "Exact approvals", "scope": "Action and policy fingerprints, expiry, one-time consumption before execution."},
-    {"name": "Durable local runtime", "scope": "SQLite state shared by trusted workers on one host; suspension, revocation, unresolved-start detection, explicit reconciliation."},
-    {"name": "Audit evidence", "scope": "Hash chains, optional HMAC signatures, and checkpoints retained outside the mutable log/database boundary for rollback detection."}
+    {
+      "name": "Action evaluation",
+      "scope": "Known patterns in proposed shell commands, filesystem operations, and SQL. Unclassified actions remain UNKNOWN."
+    },
+    {
+      "name": "Trajectory evaluation",
+      "scope": "Configured run contracts, actor/delegation constraints, supported secret-read-to-egress patterns, blocked retries, and output boundaries."
+    },
+    {
+      "name": "Principal and capability checks",
+      "scope": "Trusted integration supplies private tokens and bound identity. Capabilities scope actions and target resources when configured."
+    },
+    {
+      "name": "Exact approvals",
+      "scope": "Action and policy fingerprints, expiry, one-time consumption before execution."
+    },
+    {
+      "name": "Durable local runtime",
+      "scope": "SQLite state shared by trusted workers on one host; suspension, revocation, unresolved-start detection, explicit reconciliation."
+    },
+    {
+      "name": "Audit evidence",
+      "scope": "Hash chains, optional HMAC signatures, and checkpoints retained outside the mutable log/database boundary for rollback detection."
+    },
+    {
+      "name": "Typed workflow execution",
+      "scope": "Pinned reads, repository status, fixed reports, copies, Base64 encoding, and owner-approved publication through six scoped tools."
+    },
+    {
+      "name": "Authenticated artifact provenance",
+      "scope": "Source sensitivity follows supported transformations and exact artifact versions; arbitrary programs and model summaries are not tracked."
+    },
+    {
+      "name": "Durable stdio MCP",
+      "scope": "Modern discovery and legacy initialization, durable run reuse, bounded requests, cancellation, and one server per state directory."
+    },
+    {
+      "name": "Catalog quarantine",
+      "scope": "New, missing, changed, or malformed definitions require explicit owner review. Catalog fingerprints do not attest implementation."
+    }
   ],
   "entry_points": [
-    {"name": "CLI / Python evaluation API", "classification": "Advisory evaluation", "requirement": "Caller must honor the decision before execution."},
-    {"name": "RuntimeToolExecutor / execute_authorized / execute_approved", "classification": "Trusted executor-bound runtime", "requirement": "All protected side effects routed through the gate; shared local SQLite store; protected integration keys."},
-    {"name": "MCP stdio / optional HTTP proxy", "classification": "Advisory proxy / adapter boundary", "requirement": "Only forwarded calls are inspected. No RuntimeGate approval, suspension/revocation, or durable start/outcome guarantees."}
+    {
+      "name": "Workflow.call",
+      "classification": "Trusted typed local executor",
+      "requirement": "Protected owner policy/state and POSIX file workflows; exact artifact and destination authorization."
+    },
+    {
+      "name": "workflow-mcp",
+      "classification": "Durable stdio execution server",
+      "requirement": "Same typed dispatcher and RuntimeGate lifecycle; native host tools and other servers remain outside scope."
+    },
+    {
+      "name": "Responses Dispatcher",
+      "classification": "Application-side function execution",
+      "requirement": "Real offline executor tested. Live API use unverified; hosted tools excluded. Replayed call IDs do not reexecute."
+    },
+    {
+      "name": "Claude Code / Cursor hooks",
+      "classification": "Host-owned execution",
+      "requirement": "Separate documented payload/config fixtures tested. Native applications unverified; host must honor the decision."
+    },
+    {
+      "name": "Codex MCP configuration",
+      "classification": "Project-scoped MCP setup",
+      "requirement": "CLI overrides and MCP SDK tested; project discovery and native invocation unverified."
+    },
+    {
+      "name": "CLI / Python evaluation API",
+      "classification": "Advisory evaluation",
+      "requirement": "Caller must execute only on ALLOW."
+    },
+    {
+      "name": "Legacy MCP proxy",
+      "classification": "Inspection and forwarding",
+      "requirement": "No RuntimeGate execution lifecycle. HTTP mode is a custom JSON POST bridge, not full Streamable HTTP."
+    }
   ],
   "limitations": [
     "Not an OS sandbox or arbitrary-agent containment system.",
@@ -38,16 +117,38 @@
     "Replay prevention does not guarantee exactly-once external side effects after process death.",
     "Local audit chains and HMAC signatures are not immutable storage.",
     "Readiness checks inspect local store/audit posture and cannot prove application-wide mediation.",
-    "Principal labels alone are not authentication. Trusted tokens must remain outside model-visible and attacker-writable state."
+    "Principal labels alone are not authentication. Trusted tokens must remain outside model-visible and attacker-writable state.",
+    "Policy, executor code, state/provenance, keys, and approval controls must be inaccessible to the agent.",
+    "Artifact provenance covers supported typed transformations, not arbitrary shell/Python programs or model-generated content."
   ],
   "evidence": {
     "path": "./evidence.json",
     "browser_behavior": "Replays recorded results. No command execution or Python evaluation occurs in the browser.",
-    "runtime_scenario": "Synthetic safe validator: pending request not executed, exact approval executed, approval replay refused. Custom safe-write evaluator and constrained test-file executor."
+    "runtime_scenario": "Synthetic safe validator: pending request not executed, exact approval executed, approval replay refused. Custom safe-write evaluator and constrained test-file executor.",
+    "recorded_on": "2026-11-08",
+    "release_demo": "https://github.com/sagarchhatrala/agent-circuit-breaker/releases/tag/v1.7.0",
+    "published_validation": {
+      "local_tests": 679,
+      "local_subtests": 380,
+      "review_scenarios": 40,
+      "legitimate_workflows": 7,
+      "adversarial_control_cases": 33,
+      "observed_unauthorized_effects": 0,
+      "scope": "Separately authored review within the implementation session, not certification; local macOS Python 3.14.8 measurements."
+    }
   },
   "documentation": {
-    "enforcement_matrix": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.6.9/docs/ADAPTER_ENFORCEMENT_MATRIX.md",
-    "runtime_hardening": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.6.9/docs/RUNTIME_PRODUCTION_HARDENING.md",
-    "security_model": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.6.9/docs/SECURITY_MODEL.md"
-  }
+    "enforcement_matrix": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/ADAPTER_ENFORCEMENT_MATRIX.md",
+    "runtime_hardening": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/RUNTIME_PRODUCTION_HARDENING.md",
+    "security_model": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/SECURITY_MODEL.md",
+    "workflow_security": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/WORKFLOW_SECURITY.md",
+    "integrations": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/integrations/README.md",
+    "demo": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/DEMO.md",
+    "validation": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/validation/v1.7.0-results.md"
+  },
+  "demo": "agent-circuit-breaker demo",
+  "typed_workflow_platforms": [
+    "Linux",
+    "macOS"
+  ]
 }

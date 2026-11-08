@@ -1,0 +1,22 @@
+/* v1.7.0 additions use the published page's palette, fonts, and spacing.
+   The existing styles.css and all original components remain unchanged. */
+.release-player { min-width: 0; margin: 0; overflow: hidden; border: 1px solid #c6cebf; border-radius: 5px; background: var(--white); }
+.release-player .demo-header { padding-inline: 22px; }
+.release-player video { display: block; width: 100%; aspect-ratio: 1440 / 1200; background: var(--dark); }
+.release-player figcaption { padding: 14px 22px; color: var(--muted); font: 9px/1.8 var(--mono); }
+.release-demo .approval-copy > .text-link { display: flex; width: fit-content; }
+.release-demo .replay-note a, .release-scope a { text-decoration: underline; }
+.host-guides { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 30px; }
+.host-guides a { padding-top: 18px; border-top: 1px solid var(--line); font-size: 12px; }
+.host-guides span { display: block; margin-top: 9px; color: var(--muted); font-size: 11px; line-height: 1.9; }
+.release-evidence { padding-top: 0; }
+.release-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+.release-metrics > div { border-top: 1px solid var(--line); padding-top: 22px; }
+.release-metrics strong { display: block; font-size: 42px; line-height: 1.2; letter-spacing: -.048em; }
+.release-metrics span { display: block; margin-top: 10px; color: var(--muted); font-size: 12px; }
+.release-scope { margin-top: 24px; color: var(--muted); font-size: 11px; line-height: 1.9; }
+.release-evidence-links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 15px; }
+@media (max-width: 650px) {
+  .host-guides, .release-metrics { grid-template-columns: 1fr; gap: 22px; }
+  .release-player .demo-header, .release-player figcaption { padding-inline: 18px; }
+}
