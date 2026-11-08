@@ -36,7 +36,7 @@ Retired routes such as `/hac/`, `/hac-demo/`, and `/horizon-agent-containment/pr
 
 - `index.html`, `home.css`, `app.js`: personal homepage; `styles.css` supplies shared base styles also used by Experience.
 - `experience/`: interactive career explorer and professional background, including Rig Security, AirMDR, ACB, and KECHAA.
-- `agent-circuit-breaker/`: ACB project, interactive policy checks, and approval walkthrough. Evidence recorded from v1.6.9 at `55b9646`.
+- `agent-circuit-breaker/`: ACB project, interactive policy checks, and approval walkthrough. Updated for v1.7.0, with fresh recorded policy/approval evidence, the captioned release demo, integration scope, and validation links. The published theme remains in `agent-circuit-breaker/styles.css`; `release.css` styles only the added release sections.
 - `horizon-agent-containment/`: HAC project and three scenario replays. Evidence recorded from prototype v0.1.0 at `639a641`.
 - `profile.json`, each project's `project.json`, and `llms.txt` files: structured and plain-text information for humans and AI readers.
 - `scripts/build_site.py`: explicit publication file list.

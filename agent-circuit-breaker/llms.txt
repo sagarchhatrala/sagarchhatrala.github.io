@@ -1,11 +1,13 @@
 # Agent Circuit Breaker (ACB)
 
-> Open-source Python safety layer by Sagar Chhatrala. Local deterministic checks for agent actions and trajectories, plus a stateful RuntimeGate for trusted single-host execution integrations.
+> Open-source Python safety layer by Sagar Chhatrala. Local deterministic checks for agent actions and trajectories, plus typed local execution, durable stdio MCP, and exact approvals through a stateful RuntimeGate for trusted single-host integrations.
 
-Reviewed version: 1.6.9 (beta), 2026-10-20.
-Source revision: 55b9646ea78384dd2a3c57bf1ff7b67048d75b16.
+Reviewed version: 1.7.0 (beta), 2026-11-08.
+Source revision: d6dd54531652853db5b34b24938fb6d3f1b70dc3.
 Python: 3.11+. License: MIT. Default runtime dependencies: Python standard library only.
-Install: python -m pip install agent-circuit-breaker==1.6.9
+Install: python -m pip install agent-circuit-breaker==1.7.0
+Demo: agent-circuit-breaker demo
+Typed file workflows require Linux/macOS. The demo is offline and needs no API key.
 
 ## Supported capabilities
 
@@ -18,29 +20,49 @@ Install: python -m pip install agent-circuit-breaker==1.6.9
 - Local audit chains, optional HMAC signatures, and independent checkpoints support evidence verification.
 - CLI runtime-health, runtime-inspect, production-check, and safe-validate inspect the local runtime setup. safe-validate uses synthetic test-file side effects.
 
+## New in v1.7.0
+
+- Six typed tools bind reads, repository status, reports, copies, Base64 encoding, and publication to explicit owner permissions and exact artifact versions.
+- Authenticated provenance retains sensitivity through supported transformations; arbitrary shell/Python/model information flow is not tracked.
+- Exact owner approvals are expiring, revocable, and single-use; capability expiry is rechecked at start.
+- Unresolved effects persist through restart and prevent automatic retries.
+- New, removed, changed, or malformed catalog definitions quarantine until owner review. Definitions do not attest remote implementations.
+- The packaged demo covers useful work, unauthorized export, exact approval, interruption, and catalog changes. Proposals are scripted offline; backend observations are fresh on each local run.
+- Publishing gates build once and promote the same wheel/source archive bytes through TestPyPI and PyPI, then verify a fresh public install.
+
 ## Integration and enforcement boundary
 
 The strongest supported path is a single-host trusted runtime integration: every protected side effect passes through RuntimeToolExecutor, execute_authorized, or execute_approved; trusted workers share one local SQLite store; private keys remain outside model-visible and attacker-writable state.
 
-CLI and Python policy evaluation are advisory unless the caller gates execution on the results. The MCP stdio/optional HTTP proxy can stop forwarding unsafe or unknown calls by policy, but does not implement RuntimeGate's exact approvals, suspension/revocation, or durable execution start/outcome guarantees.
+CLI and Python policy evaluation are advisory unless the caller gates execution on the results. The v1.7.0 workflow-mcp stdio server executes six typed tools through the durable Workflow dispatcher, supports modern discovery and legacy initialization, and keeps one server per state directory. The Responses dispatcher uses the same execution path and protects against call-ID replay; its offline path is tested, live API use is unverified.
+
+The legacy MCP proxy can stop forwarding unsafe or unknown calls by policy but does not own RuntimeGate's execution lifecycle. Its HTTP mode is a custom JSON POST bridge, not full Streamable HTTP. Claude Code and Cursor native hooks have tested config/event fixtures but unverified native hosts. Codex CLI overrides and MCP SDK calls are tested; project discovery and native invocation are unverified.
 
 ACB is not an OS sandbox, arbitrary-agent containment system, distributed coordinator, or guarantee of exactly-once external effects. Direct tool/subprocess calls that bypass ACB are outside scope. Local HMAC logs are not immutable storage; protect keys and retain rollback-detection checkpoints independently. Readiness checks cannot prove application-wide mediation.
 
 ## Website examples
 
-The browser replays recorded v1.6.9 results; it does not execute commands or run Python.
+The browser replays recorded v1.7.0 results; it does not execute commands or run Python.
 - git push --force origin main: BLOCK.
 - DROP TABLE users: BLOCK.
 - ls /home: UNKNOWN.
 - Synthetic safe-write approval scenario: pending request does not execute; exact approval executes; replay does not execute. This scenario uses the validator's custom evaluator and constrained executor, not a claim that arbitrary writes pass default policy.
 
+## Published validation
+
+The November 8 v1.7.0 local suite reports 679 tests plus 380 subtests. The separately authored scenario review covers 7 legitimate workflows and 33 adversarial/control cases, with 0 observed unauthorized effects and no false blocks in the seven selected legitimate cases. This was a review within the implementation session, not certification. Local measurements used macOS/Python 3.14.8; release CI separately checks Python 3.11/3.12 and package artifacts.
+
 ## Sources
 
 - [FAUN.toolbox listing and scorecard](https://faun.dev/toolbox/agent-circuit-breaker/): ACB is listed in FAUN.dev’s developer-tool directory.
 - [Source repository](https://github.com/sagarchhatrala/agent-circuit-breaker)
-- [Release](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.6.9/docs/releases/v1.6.9.md)
-- [Enforcement matrix](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.6.9/docs/ADAPTER_ENFORCEMENT_MATRIX.md)
-- [Runtime hardening](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.6.9/docs/RUNTIME_PRODUCTION_HARDENING.md)
+- [Release](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/releases/v1.7.0.md)
+- [Enforcement matrix](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/ADAPTER_ENFORCEMENT_MATRIX.md)
+- [Runtime hardening](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/RUNTIME_PRODUCTION_HARDENING.md)
 - [Recorded website evidence](./evidence.json)
 - [Structured project facts](./project.json)
 - [Author](https://sagarchhatrala.github.io/)
+
+- [Local demo guide](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/DEMO.md)
+- [Workflow security](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/WORKFLOW_SECURITY.md)
+- [Measured validation](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/validation/v1.7.0-results.md)
