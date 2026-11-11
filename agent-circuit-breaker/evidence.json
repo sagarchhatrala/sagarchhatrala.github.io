@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "recorded_on": "2026-11-08",
-  "version": "1.7.0",
-  "source_commit": "d6dd54531652853db5b34b24938fb6d3f1b70dc3",
+  "recorded_on": "2026-11-11",
+  "version": "1.7.2",
+  "source_commit": "7c04c3900460a633400bd1b6b5d0a5cca2df9f20",
   "mode": "Recorded Python evaluations and synthetic local runtime validation. Browser interaction replays these results; it does not execute commands.",
   "checks": [
     {
@@ -109,7 +109,7 @@
         "risk_score": 85,
         "error": null,
         "policy": null,
-        "engine_version": "1.7.0",
+        "engine_version": "1.7.2",
         "inspection_coverage": {
           "schema_version": 1,
           "status": "complete",
@@ -272,7 +272,7 @@
         "risk_score": 100,
         "error": null,
         "policy": null,
-        "engine_version": "1.7.0",
+        "engine_version": "1.7.2",
         "inspection_coverage": {
           "schema_version": 1,
           "status": "complete",
@@ -416,7 +416,7 @@
         "risk_score": 0,
         "error": null,
         "policy": null,
-        "engine_version": "1.7.0",
+        "engine_version": "1.7.2",
         "inspection_coverage": {
           "schema_version": 1,
           "status": "complete",
@@ -481,7 +481,14 @@
     }
   ],
   "runtime_validation": {
-    "passed": true,
+    "schema_version": 1,
+    "root": "<synthetic-validation-root>",
+    "runtime_store": "<synthetic-validation-root>/evidence/runtime.sqlite3",
+    "audit_log": "<synthetic-validation-root>/evidence/audit.jsonl",
+    "checkpoint": "<synthetic-validation-root>/evidence/audit.checkpoint.json",
+    "side_effects": "<synthetic-validation-root>/evidence/side_effects.jsonl",
+    "result_count": 5,
+    "failures": [],
     "results": [
       {
         "id": "allowed_runtime_execution",
@@ -508,7 +515,27 @@
           "before": 2,
           "after": 2
         }
+      },
+      {
+        "id": "audit_checkpoint_verifies",
+        "passed": true,
+        "evidence": {
+          "is_valid": true,
+          "error": null,
+          "checkpoint_entries": 1,
+          "current_entries": 1,
+          "signature_checked": true
+        }
+      },
+      {
+        "id": "production_check_passes",
+        "passed": true,
+        "evidence": {
+          "failure_count": 0,
+          "warning_count": 0
+        }
       }
-    ]
+    ],
+    "passed": true
   }
 }

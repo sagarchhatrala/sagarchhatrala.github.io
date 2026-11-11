@@ -25,17 +25,22 @@
 
 ### Agent Circuit Breaker (ACB)
 
-A published beta Python package (v1.6.9) for deterministic checks on shell commands, filesystem operations, SQL, MCP tools, and agent trajectories. Install: `pip install agent-circuit-breaker`.
+A published beta Python package (v1.7.2, released November 9, 2026) for deterministic runtime authorization. Install: `python -m pip install agent-circuit-breaker==1.7.2`.
 
-The stateful RuntimeGate adds exact approvals, single-use authorization, scoped authority, and durable SQLite run state for trusted single-host integrations. Every protected side effect must be mediated. CLI/API evaluation and the MCP proxy have distinct advisory or adapter boundaries; the MCP proxy does not inherit RuntimeGate's approval and durable execution guarantees.
+A separate owner service holds resources, credentials, policy, and approval authority. Agents request typed file operations, owner-registered SQLite maintenance, and exact S3-compatible publication. Single-use approvals, cumulative file/row/export-byte budgets, and uncertain execution persist through restart. Supported transformations preserve labels; only the owner can declassify reviewed bytes. Signed evidence supports independent retention and verification.
 
-Decisions include ALLOW, BLOCK, UNKNOWN, ERROR, and PENDING_APPROVAL. UNKNOWN is not execution authority. ACB is not an OS sandbox or distributed coordinator. Website interactions replay documented or recorded examples and never execute commands or run the Python engine.
+The owner route requires Python 3.11+ on Linux/macOS. Protected deployment requires OS isolation, distinct UIDs, protected owner state/control sockets, and removal of alternate resource access. Same-UID development is a rehearsal. SQLite support is bounded; export-byte budgets count S3 payloads, not all information flow. HMAC evidence is not immutable.
 
+Existing typed Workflow and workflow-mcp tools remain supported. The owner MCP client adds separated authority. Native hooks rely on their host, and the legacy proxy does not own RuntimeGate's execution lifecycle. Host configuration/SDK paths are tested; native desktop hosts and live AWS are not certified. Outcomes ALLOW, BLOCK, UNKNOWN, ERROR, and PENDING_APPROVAL remain distinct; only ALLOW authorizes execution.
+
+Published v1.7.2 evidence records 723 regression tests plus 444 subtests, 133 legacy live checks, 37 MinIO observed-effect checks, and 8 separate-UID Linux isolation checks. These are finite synthetic acceptance results, not certification. Website policy and approval examples were freshly recorded from v1.7.2 on November 11; the existing video is explicitly a historical v1.7.0 recording. Browser interactions do not execute commands.
+
+- [Project and owner workflow](https://sagarchhatrala.github.io/agent-circuit-breaker/#owner)
 - [Structured capabilities and limits](https://sagarchhatrala.github.io/agent-circuit-breaker/project.json)
-- [Project site](https://sagarchhatrala.github.io/agent-circuit-breaker/)
-- [Source and quickstart](https://github.com/sagarchhatrala/agent-circuit-breaker)
-- [PyPI package](https://pypi.org/project/agent-circuit-breaker/)
-- [FAUN.toolbox listing and scorecard](https://faun.dev/toolbox/agent-circuit-breaker/): ACB is listed in FAUN.dev’s developer-tool directory.
+- [Release and execution evidence](https://github.com/sagarchhatrala/agent-circuit-breaker/releases/tag/v1.7.2)
+- [Owner guide](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/OWNER_SERVICE.md)
+- [PyPI package](https://pypi.org/project/agent-circuit-breaker/1.7.2/)
+- [FAUN.toolbox listing and scorecard](https://faun.dev/toolbox/agent-circuit-breaker/)
 
 ### Horizon Agent Containment (HAC)
 
@@ -61,4 +66,4 @@ Open-source research prototype for authorization-bound agent tool execution. Sag
 - [LinkedIn](https://www.linkedin.com/in/sagarchhatrala)
 - Email: chhatralasagar99@gmail.com
 
-Updated: 2026-11-02. This is an author-maintained profile. Project repositories are the source for implementation details and current releases.
+Updated: 2026-11-11. This is an author-maintained profile. Project repositories are the source for implementation details and current releases.

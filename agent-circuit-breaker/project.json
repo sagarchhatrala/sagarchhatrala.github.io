@@ -6,10 +6,10 @@
     "name": "Sagar Chhatrala",
     "url": "https://sagarchhatrala.github.io/"
   },
-  "version": "1.7.0",
+  "version": "1.7.2",
   "status": "Beta",
-  "reviewed_on": "2026-11-08",
-  "source_commit": "d6dd54531652853db5b34b24938fb6d3f1b70dc3",
+  "reviewed_on": "2026-11-11",
+  "source_commit": "7c04c3900460a633400bd1b6b5d0a5cca2df9f20",
   "repository": "https://github.com/sagarchhatrala/agent-circuit-breaker",
   "directory_listings": [
     {
@@ -22,8 +22,8 @@
   "language": "Python",
   "requires_python": ">=3.11",
   "default_runtime_dependencies": [],
-  "install": "python -m pip install agent-circuit-breaker==1.7.0",
-  "summary": "Explicit permissions before AI agent execution, with typed local tools, durable MCP workflows, exact single-use approvals, and a runnable offline demo.",
+  "install": "python -m pip install agent-circuit-breaker==1.7.2",
+  "summary": "Deterministic runtime authorization with a separate owner service for file, SQLite and S3 operations, exact approvals, cumulative effect budgets, and signed execution evidence.",
   "decisions": [
     "ALLOW",
     "BLOCK",
@@ -71,9 +71,38 @@
     {
       "name": "Catalog quarantine",
       "scope": "New, missing, changed, or malformed definitions require explicit owner review. Catalog fingerprints do not attest implementation."
+    },
+    {
+      "name": "Separate owner service",
+      "scope": "Authenticated Unix agent/control sockets use OS peer identity. Distinct UIDs required outside same-UID development rehearsal; OS isolation and no alternate resource access required."
+    },
+    {
+      "name": "Registered SQLite maintenance",
+      "scope": "Owner-defined parameterized UPDATE/DELETE on a bounded supported table. Private-copy preview, exact snapshot approval, transactional revalidation, actual row-count limits; not arbitrary SQL/ORM support."
+    },
+    {
+      "name": "S3-compatible publication",
+      "scope": "Owner-registered destination and artifact binding, SigV4 and SHA-256, conditional creation, no redirects or automatic uncertain retries. Tested with Moto/MinIO, not live AWS certification."
+    },
+    {
+      "name": "Cumulative effect budgets",
+      "scope": "Created output files, affected SQLite rows and S3 payload bytes reserved at atomic execution start, settled by trusted measurements. Uncertain execution retains reservations across restart. Opt-in for existing RuntimeGate contracts."
+    },
+    {
+      "name": "JSON and redaction transforms",
+      "scope": "Canonical JSON and pattern redaction preserve labels. Only an owner can explicitly declassify exact reviewed bytes; arbitrary information flow is not tracked."
+    },
+    {
+      "name": "Paginated signed owner evidence",
+      "scope": "HMAC-authenticated export with independent retention and verification. Not immutable, public-key verifiable, or resistant to a compromised owner/key holder."
     }
   ],
   "entry_points": [
+    {
+      "name": "Owner service + owner MCP client",
+      "classification": "Separate owner execution",
+      "requirement": "Beta, single-host authority. Owner service requires Python 3.11+ on Linux/macOS, OS isolation, protected resources and distinct owner/agent UIDs outside explicit development mode. Typed Workflow, owner MCP, legacy proxy and advisory checks have different boundaries. UNKNOWN is not permission; no arbitrary SQL, immutable audit, or distributed exactly-once guarantee."
+    },
     {
       "name": "Workflow.call",
       "classification": "Trusted typed local executor",
@@ -119,36 +148,57 @@
     "Readiness checks inspect local store/audit posture and cannot prove application-wide mediation.",
     "Principal labels alone are not authentication. Trusted tokens must remain outside model-visible and attacker-writable state.",
     "Policy, executor code, state/provenance, keys, and approval controls must be inaccessible to the agent.",
-    "Artifact provenance covers supported typed transformations, not arbitrary shell/Python programs or model-generated content."
+    "Artifact provenance covers supported typed transformations, not arbitrary shell/Python programs or model-generated content.",
+    "Same-UID development does not provide containment. Native host apps and live AWS were not certified.",
+    "SQLite support is a bounded maintenance profile, not general database access.",
+    "Export-byte budgets count S3 payloads, not reads, previews, MCP responses, tokens, cost, or universal information flow.",
+    "Pattern redaction preserves labels and does not automatically declassify."
   ],
   "evidence": {
     "path": "./evidence.json",
     "browser_behavior": "Replays recorded results. No command execution or Python evaluation occurs in the browser.",
     "runtime_scenario": "Synthetic safe validator: pending request not executed, exact approval executed, approval replay refused. Custom safe-write evaluator and constrained test-file executor.",
-    "recorded_on": "2026-11-08",
+    "recorded_on": "2026-11-11",
     "release_demo": "https://github.com/sagarchhatrala/agent-circuit-breaker/releases/tag/v1.7.0",
     "published_validation": {
-      "local_tests": 679,
-      "local_subtests": 380,
-      "review_scenarios": 40,
-      "legitimate_workflows": 7,
-      "adversarial_control_cases": 33,
-      "observed_unauthorized_effects": 0,
-      "scope": "Separately authored review within the implementation session, not certification; local macOS Python 3.14.8 measurements."
-    }
+      "version": "1.7.2",
+      "published_on": "2026-11-09",
+      "local_tests": 723,
+      "local_subtests": 444,
+      "legacy_live_checks": 133,
+      "minio_checks": 37,
+      "isolation_checks": 8,
+      "scope": "Finite synthetic acceptance coverage. Local macOS regression report; Python 3.11/3.12 release checks, Linux containers and MinIO tested separately. Not certification, detector benchmarking, native host certification or live AWS verification.",
+      "verification": "./verification.json",
+      "owner_minio": "./owner-minio.json",
+      "owner_isolation": "./owner-isolation.json",
+      "publish_workflow": "https://github.com/sagarchhatrala/agent-circuit-breaker/actions/runs/42600307869"
+    },
+    "source_commit": "7c04c3900460a633400bd1b6b5d0a5cca2df9f20",
+    "release_demo_version": "1.7.0",
+    "release_demo_scope": "Historical five-scene recording. Demo command remains available in 1.7.2; video does not demonstrate owner service."
   },
   "documentation": {
-    "enforcement_matrix": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/ADAPTER_ENFORCEMENT_MATRIX.md",
-    "runtime_hardening": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/RUNTIME_PRODUCTION_HARDENING.md",
-    "security_model": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/SECURITY_MODEL.md",
-    "workflow_security": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/WORKFLOW_SECURITY.md",
-    "integrations": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/integrations/README.md",
-    "demo": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/DEMO.md",
-    "validation": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/validation/v1.7.0-results.md"
+    "enforcement_matrix": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/ADAPTER_ENFORCEMENT_MATRIX.md",
+    "runtime_hardening": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/RUNTIME_PRODUCTION_HARDENING.md",
+    "security_model": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/SECURITY_MODEL.md",
+    "workflow_security": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/WORKFLOW_SECURITY.md",
+    "integrations": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/integrations/README.md",
+    "demo": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/DEMO.md",
+    "validation": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/validation/v1.7.2-results.md",
+    "owner_service": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/OWNER_SERVICE.md",
+    "linux_deployment": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/examples/owner/README.md",
+    "security_fixes": "https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/releases/v1.7.1.md"
   },
   "demo": "agent-circuit-breaker demo",
   "typed_workflow_platforms": [
     "Linux",
     "macOS"
-  ]
+  ],
+  "release": {
+    "url": "https://github.com/sagarchhatrala/agent-circuit-breaker/releases/tag/v1.7.2",
+    "published_on": "2026-11-09",
+    "pypi": "https://pypi.org/project/agent-circuit-breaker/1.7.2/",
+    "verification": "./verification.json"
+  }
 }

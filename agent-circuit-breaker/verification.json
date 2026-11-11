@@ -1,0 +1,19 @@
+{
+  "version": "1.7.2",
+  "source_revision": "7c04c3900460a633400bd1b6b5d0a5cca2df9f20",
+  "verified_at": "2026-11-09T10:27:25.937269+00:00",
+  "workflow": "https://github.com/sagarchhatrala/agent-circuit-breaker/actions/runs/42600307869",
+  "workflow_conclusion": "success",
+  "testpypi_indexed_hashes_and_fresh_execution": "passed",
+  "pypi_indexed_hashes_and_fresh_execution": "passed",
+  "independent_local_public_pypi_install_and_owner_execution": "passed",
+  "regression_tests": 723,
+  "regression_subtests": 444,
+  "legacy_live_checks": 133,
+  "authoritative_wheel_minio_checks": 37,
+  "authoritative_wheel_container_isolation_checks": 8,
+  "distribution_sha256": {
+    "agent_circuit_breaker-1.7.2-py3-none-any.whl": "3b240c43102a1479664c104b4c6e8dca144fb58674a71002b9cd8a3742564655",
+    "agent_circuit_breaker-1.7.2.tar.gz": "217e58373449343e31bb54f6490fb633d7914537a8a6ec4c9c782a08c5b5ae15"
+  }
+}

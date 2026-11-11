@@ -1,4 +1,4 @@
-/* v1.7.0 additions use the published page's palette, fonts, and spacing.
+/* Release additions use the published page's palette, fonts, and spacing.
    The existing styles.css and all original components remain unchanged. */
 .release-player { min-width: 0; margin: 0; overflow: hidden; border: 1px solid #c6cebf; border-radius: 5px; background: var(--white); }
 .release-player .demo-header { padding-inline: 22px; }
@@ -16,6 +16,23 @@
 .release-metrics span { display: block; margin-top: 10px; color: var(--muted); font-size: 12px; }
 .release-scope { margin-top: 24px; color: var(--muted); font-size: 11px; line-height: 1.9; }
 .release-evidence-links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 15px; }
+.owner-options { display: flex; flex-wrap: wrap; gap: 7px; padding-top: 20px; }
+.owner-options button { background: transparent; color: var(--green); border: 1px solid var(--line); min-height: 44px; padding: 8px 12px; border-radius: 3px; font-size: 11px; }
+.owner-options button:hover { border-color: var(--green); }
+.owner-options button[aria-pressed=true] { color: var(--paper); background: var(--dark); border-color: var(--dark); }
+.owner-panel { padding-top: 22px; }
+.owner-panel h3 { font-size: 21px; }
+.owner-panel > p, .owner-note { color: var(--muted); font-size: 11px; line-height: 1.9; margin-top: 12px; }
+.owner-panel .approval-steps p { font-size: 11px; max-width: none; }
+.owner-panel .approval-steps { padding-bottom: 0; }
+.owner-note { border-top: 1px solid var(--line); padding-top: 16px; }
+.owner-section .approval-copy > .text-link { display: flex; width: fit-content; }
+.owner-setup { padding-top: 0; align-items: start; }
+.owner-setup code { white-space: pre-wrap; overflow-wrap: anywhere; }
+.owner-setup .copy-row { align-items: start; }
+.release-hardening { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
+.release-hardening h3 { font-size: 20px; }
+.release-hardening p { max-width: 850px; color: var(--muted); font-size: 12px; line-height: 1.9; margin-top: 14px; }
 @media (max-width: 650px) {
   .host-guides, .release-metrics { grid-template-columns: 1fr; gap: 22px; }
   .release-player .demo-header, .release-player figcaption { padding-inline: 18px; }

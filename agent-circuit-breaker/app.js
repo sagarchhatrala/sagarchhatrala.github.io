@@ -70,6 +70,25 @@ async function initializeEvidence() {
 }
 initializeEvidence();
 
+// Every recorded owner panel remains readable when JavaScript is unavailable.
+const ownerOptions = document.querySelector('.owner-options');
+if (ownerOptions) {
+  function showOwnerWorkflow(id) {
+    document.querySelectorAll('[data-owner-panel]').forEach(panel => {
+      panel.hidden = panel.dataset.ownerPanel !== id;
+    });
+    ownerOptions.querySelectorAll('[data-owner]').forEach(button => {
+      button.setAttribute('aria-pressed', String(button.dataset.owner === id));
+    });
+  }
+  ownerOptions.addEventListener('click', event => {
+    const button = event.target.closest('[data-owner]');
+    if (button && ownerOptions.contains(button)) showOwnerWorkflow(button.dataset.owner);
+  });
+  showOwnerWorkflow('sqlite');
+  ownerOptions.hidden = false;
+}
+
 document.querySelectorAll('[data-copy]').forEach(button => {
   button.hidden = false;
   button.addEventListener('click', async () => {

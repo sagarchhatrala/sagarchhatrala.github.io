@@ -2,10 +2,10 @@
 
 > Open-source Python safety layer by Sagar Chhatrala. Local deterministic checks for agent actions and trajectories, plus typed local execution, durable stdio MCP, and exact approvals through a stateful RuntimeGate for trusted single-host integrations.
 
-Reviewed version: 1.7.0 (beta), 2026-11-08.
-Source revision: d6dd54531652853db5b34b24938fb6d3f1b70dc3.
+Reviewed version: 1.7.2 (beta), 2026-11-11.
+Source revision: 7c04c3900460a633400bd1b6b5d0a5cca2df9f20.
 Python: 3.11+. License: MIT. Default runtime dependencies: Python standard library only.
-Install: python -m pip install agent-circuit-breaker==1.7.0
+Install: python -m pip install agent-circuit-breaker==1.7.2
 Demo: agent-circuit-breaker demo
 Typed file workflows require Linux/macOS. The demo is offline and needs no API key.
 
@@ -20,7 +20,7 @@ Typed file workflows require Linux/macOS. The demo is offline and needs no API k
 - Local audit chains, optional HMAC signatures, and independent checkpoints support evidence verification.
 - CLI runtime-health, runtime-inspect, production-check, and safe-validate inspect the local runtime setup. safe-validate uses synthetic test-file side effects.
 
-## New in v1.7.0
+## Existing typed workflow and local demo (introduced in v1.7.0)
 
 - Six typed tools bind reads, repository status, reports, copies, Base64 encoding, and publication to explicit owner permissions and exact artifact versions.
 - Authenticated provenance retains sensitivity through supported transformations; arbitrary shell/Python/model information flow is not tracked.
@@ -30,11 +30,27 @@ Typed file workflows require Linux/macOS. The demo is offline and needs no API k
 - The packaged demo covers useful work, unauthorized export, exact approval, interruption, and catalog changes. Proposals are scripted offline; backend observations are fresh on each local run.
 - Publishing gates build once and promote the same wheel/source archive bytes through TestPyPI and PyPI, then verify a fresh public install.
 
+## New in v1.7.2
+
+- Separate owner service with Unix agent/control sockets and OS peer identity. Protected mode requires distinct UIDs; same-UID development does not isolate an agent.
+- Owner-registered parameterized SQLite UPDATE/DELETE, private-copy preview, exact snapshot approval, transactional revalidation, and actual row-count limits.
+- S3-compatible SigV4 conditional publication, exact artifact/destination binding, SHA-256, no redirects, and no automatic retry after uncertainty.
+- Cumulative created-file, affected-row, and S3 payload-byte budgets. Atomic reservations apply even after approval and persist through restart; trusted executors settle measured effects.
+- Canonical JSON and pattern redaction preserve sensitivity labels. Only owner review can declassify exact bytes.
+- Paginated HMAC-authenticated evidence export and independent verification.
+- Thin owner MCP client and guided `--owner-socket` configuration. Existing Workflow catalog, evaluators, rule schema and unbudgeted RuntimeGate contracts remain compatible; the owner route and budgets are opt-in.
+
+## Security fixes in v1.7.1, retained in v1.7.2
+
+Stricter uninspectable MCP calls; path, shell-option and SQL handling; zero-limit semantics; protected-key signed run ledgers; serialized/flushed audit appends; checkpoint verification; and the installed pre-commit command. Empty/numeric-only calls need a typed adapter or an explicit reviewed empty-tool grant. Existing unsigned logs are not retroactively authenticated; archive them and start a new log when enabling a protected HMAC key.
+
 ## Integration and enforcement boundary
 
-The strongest supported path is a single-host trusted runtime integration: every protected side effect passes through RuntimeToolExecutor, execute_authorized, or execute_approved; trusted workers share one local SQLite store; private keys remain outside model-visible and attacker-writable state.
+The owner service separates resources and authority from agent requests. Protected use requires OS isolation and removal of alternate resource access. SQLite is a bounded maintenance profile; export-byte budgets count S3 payloads, not arbitrary information flow. Pattern redaction does not declassify. Native desktop hosts and live AWS are not certified.
 
-CLI and Python policy evaluation are advisory unless the caller gates execution on the results. The v1.7.0 workflow-mcp stdio server executes six typed tools through the durable Workflow dispatcher, supports modern discovery and legacy initialization, and keeps one server per state directory. The Responses dispatcher uses the same execution path and protects against call-ID replay; its offline path is tested, live API use is unverified.
+The supported authority model remains single-host: every protected side effect passes through RuntimeToolExecutor, execute_authorized, or execute_approved; trusted workers share one local SQLite store; private keys remain outside model-visible and attacker-writable state.
+
+CLI and Python policy evaluation are advisory unless the caller gates execution on the results. The v1.7.2 workflow-mcp stdio server executes six typed tools through the durable Workflow dispatcher, supports modern discovery and legacy initialization, and keeps one server per state directory. The Responses dispatcher uses the same execution path and protects against call-ID replay; its offline path is tested, live API use is unverified.
 
 The legacy MCP proxy can stop forwarding unsafe or unknown calls by policy but does not own RuntimeGate's execution lifecycle. Its HTTP mode is a custom JSON POST bridge, not full Streamable HTTP. Claude Code and Cursor native hooks have tested config/event fixtures but unverified native hosts. Codex CLI overrides and MCP SDK calls are tested; project discovery and native invocation are unverified.
 
@@ -42,7 +58,7 @@ ACB is not an OS sandbox, arbitrary-agent containment system, distributed coordi
 
 ## Website examples
 
-The browser replays recorded v1.7.0 results; it does not execute commands or run Python.
+The browser replays policy and approval results recorded from v1.7.2 on November 11. Owner panels quote the published v1.7.2 MinIO report. The video remains a historical v1.7.0 recording, not an owner-service demo. Browser interactions do not execute commands or run Python.
 - git push --force origin main: BLOCK.
 - DROP TABLE users: BLOCK.
 - ls /home: UNKNOWN.
@@ -50,19 +66,26 @@ The browser replays recorded v1.7.0 results; it does not execute commands or run
 
 ## Published validation
 
-The November 8 v1.7.0 local suite reports 679 tests plus 380 subtests. The separately authored scenario review covers 7 legitimate workflows and 33 adversarial/control cases, with 0 observed unauthorized effects and no false blocks in the seven selected legitimate cases. This was a review within the implementation session, not certification. Local measurements used macOS/Python 3.14.8; release CI separately checks Python 3.11/3.12 and package artifacts.
+The November 9 v1.7.2 release records 723 regression tests plus 444 subtests, 133 legacy live checks, 37 MinIO observed-effect checks and 8 separate-UID Linux isolation checks. TestPyPI and PyPI downloads matched authoritative hashes and executed fresh installed workflows; the published verification records the successful release workflow. This is finite synthetic acceptance coverage, not certification or a universal detector benchmark. Local macOS regression results, MinIO checks, and Linux isolation have separate documented scopes.
 
 ## Sources
 
 - [FAUN.toolbox listing and scorecard](https://faun.dev/toolbox/agent-circuit-breaker/): ACB is listed in FAUN.dev’s developer-tool directory.
 - [Source repository](https://github.com/sagarchhatrala/agent-circuit-breaker)
-- [Release](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/releases/v1.7.0.md)
-- [Enforcement matrix](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/ADAPTER_ENFORCEMENT_MATRIX.md)
-- [Runtime hardening](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/RUNTIME_PRODUCTION_HARDENING.md)
+- [Release](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/releases/v1.7.2.md)
+- [Enforcement matrix](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/ADAPTER_ENFORCEMENT_MATRIX.md)
+- [Runtime hardening](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/RUNTIME_PRODUCTION_HARDENING.md)
 - [Recorded website evidence](./evidence.json)
 - [Structured project facts](./project.json)
 - [Author](https://sagarchhatrala.github.io/)
 
-- [Local demo guide](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/DEMO.md)
-- [Workflow security](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/WORKFLOW_SECURITY.md)
-- [Measured validation](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.0/docs/validation/v1.7.0-results.md)
+- [Local demo guide](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/DEMO.md)
+- [Workflow security](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/WORKFLOW_SECURITY.md)
+- [Measured validation](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/validation/v1.7.2-results.md)
+
+- [Owner service](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/OWNER_SERVICE.md)
+- [Linux deployment](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/examples/owner/README.md)
+- [Security fixes and migration](https://github.com/sagarchhatrala/agent-circuit-breaker/blob/v1.7.2/docs/releases/v1.7.1.md)
+- [Published verification](./verification.json)
+- [MinIO checks](./owner-minio.json)
+- [Separate-UID isolation checks](./owner-isolation.json)

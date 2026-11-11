@@ -53,4 +53,33 @@ locations = {node.text for node in ET.parse(site / 'sitemap.xml').iter() if node
 assert locations == {'https://sagarchhatrala.github.io/experience/', 'https://sagarchhatrala.github.io/purpose-trace/', 'https://sagarchhatrala.github.io/', 'https://sagarchhatrala.github.io/agent-circuit-breaker/', 'https://sagarchhatrala.github.io/horizon-agent-containment/'}
 for name in ('hac', 'hac-demo', 'horizon-agent-containment/presentation', 'horizon-agent-containment/demo-assets', 'horizon-agent-containment/docs', 'agent-circuit-breaker/releases'):
     assert not (site / name).exists(), ('Retired path in build', name)
+
+# Keep public release claims tied to the included release evidence.
+acb = site / 'agent-circuit-breaker'
+project = json.loads((acb / 'project.json').read_text())
+verification = json.loads((acb / 'verification.json').read_text())
+recorded = json.loads((acb / 'evidence.json').read_text())
+profile = json.loads((site / 'profile.json').read_text())
+profile_acb = next(item for item in profile['projects'] if item.get('abbreviation') == 'ACB')
+assert project['version'] == profile_acb['version'] == recorded['version'] == verification['version']
+assert project['source_commit'] == recorded['source_commit'] == verification['source_revision']
+assert project['install'] == profile_acb['install']
+assert not recorded['runtime_validation']['failures']
+assert all(item['passed'] for item in recorded['runtime_validation']['results'])
+minio = json.loads((acb / 'owner-minio.json').read_text())
+isolation = json.loads((acb / 'owner-isolation.json').read_text())
+assert minio['version'] == project['version']
+assert minio['passed'] == minio['checks'] == len(minio['scenarios']) == verification['authoritative_wheel_minio_checks']
+assert all(item['passed'] for item in minio['scenarios'])
+assert len(isolation['checks']) == verification['authoritative_wheel_container_isolation_checks']
+assert all(item['passed'] for item in isolation['checks'])
+published = project['evidence']['published_validation']
+assert published['local_tests'] == verification['regression_tests']
+assert published['local_subtests'] == verification['regression_subtests']
+assert published['legacy_live_checks'] == verification['legacy_live_checks']
+for name in ('index.html', 'llms.txt'):
+    assert project['version'] in (acb / name).read_text(), ('Missing current release', name)
+assert project['install'] in (acb / 'index.html').read_text()
+assert project['evidence']['release_demo_version'] == '1.7.0', 'Do not relabel historical video'
 print(f'Validated five pages, {count} local references, structured data, fonts, sitemap, and retired-route exclusion.')
+print('Validated ACB release metadata, current runtime examples, and published execution evidence.')

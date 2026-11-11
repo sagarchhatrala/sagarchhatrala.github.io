@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated": "2026-11-02",
+  "updated": "2026-11-11",
   "name": "Sagar Chhatrala",
   "role": "Staff Security Engineer",
   "organization": "Greenlight",
@@ -110,11 +110,11 @@
       "abbreviation": "ACB",
       "status": "Published Python package; beta",
       "question": "Should this agent action execute?",
-      "description": "Deterministic action and trajectory checks, plus a stateful runtime gate with exact approvals and durable local run state for trusted agent integrations.",
+      "description": "Deterministic runtime authorization with a separate owner service for file, SQLite and S3 operations, exact approvals, cumulative effect budgets, and signed execution evidence.",
       "website": "https://sagarchhatrala.github.io/agent-circuit-breaker/",
       "repository": "https://github.com/sagarchhatrala/agent-circuit-breaker",
       "package": "https://pypi.org/project/agent-circuit-breaker/",
-      "install": "pip install agent-circuit-breaker",
+      "install": "python -m pip install agent-circuit-breaker==1.7.2",
       "decisions": [
         "ALLOW",
         "BLOCK",
@@ -122,8 +122,8 @@
         "ERROR",
         "PENDING_APPROVAL"
       ],
-      "scope": "Strongest path: single-host trusted RuntimeGate integration with every protected side effect mediated and workers sharing a local SQLite store. CLI/API and MCP evaluation have distinct advisory or adapter boundaries. UNKNOWN is not execution authority. Not an OS sandbox or distributed coordinator.",
-      "version": "1.6.9",
+      "scope": "Beta, single-host authority. Owner service requires Python 3.11+ on Linux/macOS, OS isolation, protected resources and distinct owner/agent UIDs outside explicit development mode. Typed Workflow, owner MCP, legacy proxy and advisory checks have different boundaries. UNKNOWN is not permission; no arbitrary SQL, immutable audit, or distributed exactly-once guarantee.",
+      "version": "1.7.2",
       "structured_details": "https://sagarchhatrala.github.io/agent-circuit-breaker/project.json",
       "directory_listings": [
         {
@@ -131,7 +131,8 @@
           "url": "https://faun.dev/toolbox/agent-circuit-breaker/",
           "description": "Developer-tool directory listing with a dedicated profile and scorecard."
         }
-      ]
+      ],
+      "release": "https://github.com/sagarchhatrala/agent-circuit-breaker/releases/tag/v1.7.2"
     },
     {
       "name": "Horizon Agent Containment",
